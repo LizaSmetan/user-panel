@@ -7,11 +7,103 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Template</title>
 
+	<!-- GOOGLE FONTS -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    
+    <!-- font awesome -->
+    <link rel="stylesheet" href="css/font-awesome.css">
+
     <link rel="stylesheet" href="css/style.css">
 
 </head>
 <body>
-<h1>Hello, world!</h1>
+<!-- header start -->
+<header class="fixed-to-top header">
+    <div class="flex-container container-fluid">
+        <div class="user-controls flex-container align-items-center">
+            <div class="user-info user-valet">$1,500.00
+                <i class="fa fa-angle-down" aria-hidden="true"></i>
+            </div>
+            <div class="user-info">
+                <div class="icon"></div>
+            </div>
+            <div class="user-info link">
+                <a>Leonardo Dicaprio</a>
+            </div>
+            <div class="user-info">
+                <div class="icon"></div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- header end-->
+
+<!-- aside start-->
+<aside class="aside fixed-to-top">
+    <div class="menu-control flex-container align-items-center justify-content-sb">
+        <div class="logo">
+            <a href="">
+                <img src="img/logo.png" alt="">
+            </a>
+        </div>
+        <div class="menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div class="aside-menu">
+        <ul>
+            <li><a href="">General</a></li>
+            <li><a href="">Details</a></li>
+            <li><a href="">Links</a></li>
+            <li><a href="">Banners</a></li>
+            <li><a href="">Personal data</a></li>
+            <li><a href="">Payout</a></li>
+            <li><a href="">Postback</a></li>
+        </ul>
+        <div class="your-manager">
+            <h3 class="page-title small-title">Your manager</h3>
+            <div class="manager-info flex-container align-items-center">
+                <div class="manager-photo">
+                    <img src="img/manager.png" alt="">
+                    <div class="status offline online"></div>
+                </div>
+                <a href="" class="link">Michael E.</a>
+            </div>
+        </div>
+    </div>
+</aside>
+<!-- aside end-->
+<main>
+    <div class="content-wrapper">
+        <div class="panel links">
+            <div class="panel-header">
+                <h3 class="page-title">Links</h3>
+            </div>
+            <div class="panel-body">
+                <div class="btn-row text-center">
+                    <a href="" class="btn btn-action">add new</a>
+                </div>
+                <div class="container-sm">
+                    <table class="table full-width">
+                        <tr>
+                            <td class="text-bold td-title">Line header</td>
+                            <td><a href="" class="link large-link">link</a></td>
+                        </tr>
+                        <tr>
+                            <td  class="text-bold td-title">Line header</td>
+                            <td><a href="" class="link large-link">link</a></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="btn-row text-center">
+                    <a href="" class="btn btn-action">add new</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
 
 <!-- jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
