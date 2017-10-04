@@ -7,16 +7,14 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Template</title>
 
-	<!-- GOOGLE FONTS -->
-	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-    
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+
     <!-- font awesome -->
     <link rel="stylesheet" href="css/font-awesome.css">
 
     <!--Icons-->
     <link rel="stylesheet" href="css/myfont.css">
-    <!--Jquery css-->
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
     <link rel="stylesheet" href="css/style.css">
 
@@ -59,11 +57,11 @@
     </div>
     <div class="aside-menu">
         <ul>
-            <li><a href="" class="active">General</a></li>
+            <li><a href="">General</a></li>
             <li><a href=""><span class="icon icon-details"></span> Details</a></li>
             <li><a href="">Links</a></li>
             <li><a href="">Banners</a></li>
-            <li><a href="">Personal data</a></li>
+            <li><a href="" class="active">Personal data</a></li>
             <li><a href="">Payout</a></li>
             <li><a href="">Postback</a></li>
         </ul>
@@ -82,79 +80,42 @@
 <!-- aside end-->
 <main>
     <div class="content-wrapper">
-        <div class="panel">
-            <div class="panel-header">
-                <h3 class="page-title">General statistic</h3>
-            </div>
-            <div class="panel-date text-center">
-                <form class="datepicker-form">
-                    <div class="date-input-wrap">
-                        <input type="text" id="from" name="from" class="date-control">
-                        <input type="text" id="to" name="to" class="date-control">
-                    </div>
-                    <button class="btn btn-action"><span class="icon icon-refresh"></span></button>
-                </form>
-            </div>
-            <div class="panel-body">
-                <div class="container container-sm">
-                    <div class="chart-wrap">
-                        <canvas id="myChart" width="400" height="400"></canvas>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="panel links">
             <div class="panel-header">
-                <h3 class="page-title">Links</h3>
+                <h3 class="page-title">Personal data</h3>
             </div>
             <div class="panel-body">
-                <div class="btn-row text-center">
-                    <a href="" class="btn btn-action">add new</a>
-                </div>
-                <div class="container-sm">
-                    <table class="table full-width">
-                        <tr>
-                            <td class="text-bold td-title">Line header</td>
-                            <td><a href="" class="link large-link">link</a></td>
-                        </tr>
-                        <tr>
-                            <td  class="text-bold td-title">Line header</td>
-                            <td><a href="" class="link large-link">link</a></td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="btn-row text-center">
-                    <a href="" class="btn btn-action">add new</a>
+                <div class="panel-form row">
+                    <form>
+                        <div class="label-group">
+                            <label for="user-name">Name</label>
+                            <input type="text" class="form-control" id="user-name">
+                        </div>
+                        <div class="label-group">
+                            <label for="user-surname">Surname</label>
+                            <input type="text" class="form-control" id="user-surname">
+                        </div>
+                        <div class="label-group">
+                            <label for="user-email">E-mail</label>
+                            <input type="text" class="form-control" id="user-email">
+                        </div>
+                        <div class="label-group">
+                            <label for="user-phone">Phone number</label>
+                            <input type="text" class="form-control" id="user-phone">
+                        </div>
+                    </form>
                 </div>
             </div>
-        </div>
+            <div class="panel-footer">
+                <div class="btn-row text-center">
+                    <a href="" class="btn btn-action">Save</a>
+                </div>
+            </div>
     </div>
 </main>
 
-<!--Modals-->
-<div class="modal" id="add-links-modal">
-    <div class="modal-header">
-        <h3 class="page-title">Add links</h3>
-    </div>
-    <div class="modal-body">
-        <div class="filtres">
-            <select name="" id="">
-                <option value=""></option>
-            </select>
-        </div>
-    </div>
-    <div class="modal-footer">
-        
-    </div>
-</div>
-
 <!-- jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.min.js"></script>
-<script src="js/jquery.bpopup.min.js"></script>
-<!--Init plugins-->
-<script src="js/init.js"></script>
 
 </body>
 </html>
