@@ -70,6 +70,747 @@ label {
       -ms-flex-pack: justify;
           justify-content: space-between; }
 
+/*************** SCROLLBAR BASE CSS ***************/
+.scroll-wrapper {
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: relative; }
+
+.scroll-wrapper > .scroll-content {
+  border: none !important;
+  -webkit-box-sizing: content-box !important;
+          box-sizing: content-box !important;
+  height: auto;
+  left: 0;
+  margin: 0;
+  max-height: none;
+  max-width: none !important;
+  overflow: scroll !important;
+  padding: 0;
+  position: relative !important;
+  top: 0;
+  width: auto !important; }
+
+.scroll-wrapper > .scroll-content::-webkit-scrollbar {
+  height: 0;
+  width: 0; }
+
+.scroll-element {
+  display: none; }
+
+.scroll-element, .scroll-element div {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box; }
+
+.scroll-element.scroll-x.scroll-scrollx_visible,
+.scroll-element.scroll-y.scroll-scrolly_visible {
+  display: block; }
+
+.scroll-element .scroll-bar,
+.scroll-element .scroll-arrow {
+  cursor: default; }
+
+.scroll-textarea {
+  border: 1px solid #cccccc;
+  border-top-color: #999999; }
+
+.scroll-textarea > .scroll-content {
+  overflow: hidden !important; }
+
+.scroll-textarea > .scroll-content > textarea {
+  border: none !important;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 100% !important;
+  margin: 0;
+  max-height: none !important;
+  max-width: none !important;
+  overflow: scroll !important;
+  outline: none;
+  padding: 2px;
+  position: relative !important;
+  top: 0;
+  width: 100% !important; }
+
+.scroll-textarea > .scroll-content > textarea::-webkit-scrollbar {
+  height: 0;
+  width: 0; }
+
+/*************** SIMPLE INNER SCROLLBAR ***************/
+.scrollbar-inner > .scroll-element,
+.scrollbar-inner > .scroll-element div {
+  border: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  z-index: 10; }
+
+.scrollbar-inner > .scroll-element div {
+  display: block;
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 100%; }
+
+.scrollbar-inner > .scroll-element.scroll-x {
+  bottom: 2px;
+  height: 8px;
+  left: 0;
+  width: 100%; }
+
+.scrollbar-inner > .scroll-element.scroll-y {
+  height: 100%;
+  right: 2px;
+  top: 0;
+  width: 16px; }
+
+.scrollbar-inner > .scroll-element .scroll-element_outer {
+  overflow: hidden; }
+
+.scrollbar-inner > .scroll-element .scroll-element_track,
+.scrollbar-inner > .scroll-element .scroll-bar {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+  filter: alpha(opacity=40);
+  opacity: 0.4; }
+
+.scrollbar-inner > .scroll-element .scroll-element_track {
+  background-color: #e0e0e0; }
+
+.scrollbar-inner > .scroll-element .scroll-bar {
+  background-color: #c2c2c2; }
+
+.scrollbar-inner > .scroll-element:hover .scroll-bar {
+  background-color: #919191; }
+
+.scrollbar-inner > .scroll-element.scroll-draggable .scroll-bar {
+  background-color: #919191; }
+
+/* update scrollbar offset if both scrolls are visible */
+.scrollbar-inner > .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_track {
+  left: -12px; }
+
+.scrollbar-inner > .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_track {
+  top: -12px; }
+
+.scrollbar-inner > .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_size {
+  left: -12px; }
+
+.scrollbar-inner > .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_size {
+  top: -12px; }
+
+/*************** SIMPLE OUTER SCROLLBAR ***************/
+.scrollbar-outer > .scroll-element,
+.scrollbar-outer > .scroll-element div {
+  border: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  z-index: 10; }
+
+.scrollbar-outer > .scroll-element {
+  background-color: #ffffff; }
+
+.scrollbar-outer > .scroll-element div {
+  display: block;
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 100%; }
+
+.scrollbar-outer > .scroll-element.scroll-x {
+  bottom: 0;
+  height: 12px;
+  left: 0;
+  width: 100%; }
+
+.scrollbar-outer > .scroll-element.scroll-y {
+  height: 100%;
+  right: 0;
+  top: 0;
+  width: 12px; }
+
+.scrollbar-outer > .scroll-element.scroll-x .scroll-element_outer {
+  height: 8px;
+  top: 2px; }
+
+.scrollbar-outer > .scroll-element.scroll-y .scroll-element_outer {
+  left: 2px;
+  width: 8px; }
+
+.scrollbar-outer > .scroll-element .scroll-element_outer {
+  overflow: hidden; }
+
+.scrollbar-outer > .scroll-element .scroll-element_track {
+  background-color: #eeeeee; }
+
+.scrollbar-outer > .scroll-element .scroll-element_outer,
+.scrollbar-outer > .scroll-element .scroll-element_track,
+.scrollbar-outer > .scroll-element .scroll-bar {
+  -webkit-border-radius: 8px;
+  border-radius: 8px; }
+
+.scrollbar-outer > .scroll-element .scroll-bar {
+  background-color: #d9d9d9; }
+
+.scrollbar-outer > .scroll-element .scroll-bar:hover {
+  background-color: #c2c2c2; }
+
+.scrollbar-outer > .scroll-element.scroll-draggable .scroll-bar {
+  background-color: #919191; }
+
+/* scrollbar height/width & offset from container borders */
+.scrollbar-outer > .scroll-content.scroll-scrolly_visible {
+  left: -12px;
+  margin-left: 12px; }
+
+.scrollbar-outer > .scroll-content.scroll-scrollx_visible {
+  top: -12px;
+  margin-top: 12px; }
+
+.scrollbar-outer > .scroll-element.scroll-x .scroll-bar {
+  min-width: 10px; }
+
+.scrollbar-outer > .scroll-element.scroll-y .scroll-bar {
+  min-height: 10px; }
+
+/* update scrollbar offset if both scrolls are visible */
+.scrollbar-outer > .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_track {
+  left: -14px; }
+
+.scrollbar-outer > .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_track {
+  top: -14px; }
+
+.scrollbar-outer > .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_size {
+  left: -14px; }
+
+.scrollbar-outer > .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_size {
+  top: -14px; }
+
+/*************** SCROLLBAR MAC OS X ***************/
+.scrollbar-macosx > .scroll-element,
+.scrollbar-macosx > .scroll-element div {
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  z-index: 10; }
+
+.scrollbar-macosx > .scroll-element div {
+  display: block;
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 100%; }
+
+.scrollbar-macosx > .scroll-element .scroll-element_track {
+  display: none; }
+
+.scrollbar-macosx > .scroll-element .scroll-bar {
+  background-color: #6C6E71;
+  display: block;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  opacity: 0;
+  -webkit-border-radius: 7px;
+  border-radius: 7px;
+  -webkit-transition: opacity 0.2s linear;
+  -o-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear; }
+
+.scrollbar-macosx:hover > .scroll-element .scroll-bar,
+.scrollbar-macosx > .scroll-element.scroll-draggable .scroll-bar {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+  filter: alpha(opacity=70);
+  opacity: 0.7; }
+
+.scrollbar-macosx > .scroll-element.scroll-x {
+  bottom: 0px;
+  height: 0px;
+  left: 0;
+  min-width: 100%;
+  overflow: visible;
+  width: 100%; }
+
+.scrollbar-macosx > .scroll-element.scroll-y {
+  height: 100%;
+  min-height: 100%;
+  right: 0px;
+  top: 0;
+  width: 0px; }
+
+/* scrollbar height/width & offset from container borders */
+.scrollbar-macosx > .scroll-element.scroll-x .scroll-bar {
+  height: 7px;
+  min-width: 10px;
+  top: -9px; }
+
+.scrollbar-macosx > .scroll-element.scroll-y .scroll-bar {
+  left: -9px;
+  min-height: 10px;
+  width: 7px; }
+
+.scrollbar-macosx > .scroll-element.scroll-x .scroll-element_outer {
+  left: 2px; }
+
+.scrollbar-macosx > .scroll-element.scroll-x .scroll-element_size {
+  left: -4px; }
+
+.scrollbar-macosx > .scroll-element.scroll-y .scroll-element_outer {
+  top: 2px; }
+
+.scrollbar-macosx > .scroll-element.scroll-y .scroll-element_size {
+  top: -4px; }
+
+/* update scrollbar offset if both scrolls are visible */
+.scrollbar-macosx > .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_size {
+  left: -11px; }
+
+.scrollbar-macosx > .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_size {
+  top: -11px; }
+
+/*************** SCROLLBAR LIGHT ***************/
+.scrollbar-light > .scroll-element,
+.scrollbar-light > .scroll-element div {
+  border: none;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  z-index: 10; }
+
+.scrollbar-light > .scroll-element {
+  background-color: #ffffff; }
+
+.scrollbar-light > .scroll-element div {
+  display: block;
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 100%; }
+
+.scrollbar-light > .scroll-element .scroll-element_outer {
+  -webkit-border-radius: 10px;
+  border-radius: 10px; }
+
+.scrollbar-light > .scroll-element .scroll-element_size {
+  background: #dbdbdb;
+  background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2RiZGJkYiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlOGU4ZTgiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+");
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #dbdbdb), color-stop(100%, #e8e8e8));
+  background: -webkit-linear-gradient(left, #dbdbdb 0%, #e8e8e8 100%);
+  background: -o-linear-gradient(left, #dbdbdb 0%, #e8e8e8 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#dbdbdb), to(#e8e8e8));
+  background: linear-gradient(to right, #dbdbdb 0%, #e8e8e8 100%);
+  -webkit-border-radius: 10px;
+  border-radius: 10px; }
+
+.scrollbar-light > .scroll-element.scroll-x {
+  bottom: 0;
+  height: 17px;
+  left: 0;
+  min-width: 100%;
+  width: 100%; }
+
+.scrollbar-light > .scroll-element.scroll-y {
+  height: 100%;
+  min-height: 100%;
+  right: 0;
+  top: 0;
+  width: 17px; }
+
+.scrollbar-light > .scroll-element .scroll-bar {
+  background: #fefefe;
+  background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZlZmVmZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmNWY1ZjUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+");
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #fefefe), color-stop(100%, #f5f5f5));
+  background: -webkit-linear-gradient(left, #fefefe 0%, #f5f5f5 100%);
+  background: -o-linear-gradient(left, #fefefe 0%, #f5f5f5 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#fefefe), to(#f5f5f5));
+  background: linear-gradient(to right, #fefefe 0%, #f5f5f5 100%);
+  border: 1px solid #dbdbdb;
+  -webkit-border-radius: 10px;
+  border-radius: 10px; }
+
+/* scrollbar height/width & offset from container borders */
+.scrollbar-light > .scroll-content.scroll-scrolly_visible {
+  left: -17px;
+  margin-left: 17px; }
+
+.scrollbar-light > .scroll-content.scroll-scrollx_visible {
+  top: -17px;
+  margin-top: 17px; }
+
+.scrollbar-light > .scroll-element.scroll-x .scroll-bar {
+  height: 10px;
+  min-width: 10px;
+  top: 0px; }
+
+.scrollbar-light > .scroll-element.scroll-y .scroll-bar {
+  left: 0px;
+  min-height: 10px;
+  width: 10px; }
+
+.scrollbar-light > .scroll-element.scroll-x .scroll-element_outer {
+  height: 12px;
+  left: 2px;
+  top: 2px; }
+
+.scrollbar-light > .scroll-element.scroll-x .scroll-element_size {
+  left: -4px; }
+
+.scrollbar-light > .scroll-element.scroll-y .scroll-element_outer {
+  left: 2px;
+  top: 2px;
+  width: 12px; }
+
+.scrollbar-light > .scroll-element.scroll-y .scroll-element_size {
+  top: -4px; }
+
+/* update scrollbar offset if both scrolls are visible */
+.scrollbar-light > .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_size {
+  left: -19px; }
+
+.scrollbar-light > .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_size {
+  top: -19px; }
+
+.scrollbar-light > .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_track {
+  left: -19px; }
+
+.scrollbar-light > .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_track {
+  top: -19px; }
+
+/*************** SCROLLBAR RAIL ***************/
+.scrollbar-rail > .scroll-element,
+.scrollbar-rail > .scroll-element div {
+  border: none;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  z-index: 10; }
+
+.scrollbar-rail > .scroll-element {
+  background-color: #ffffff; }
+
+.scrollbar-rail > .scroll-element div {
+  display: block;
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 100%; }
+
+.scrollbar-rail > .scroll-element .scroll-element_size {
+  background-color: #999;
+  background-color: rgba(0, 0, 0, 0.3); }
+
+.scrollbar-rail > .scroll-element .scroll-element_outer:hover .scroll-element_size {
+  background-color: #666;
+  background-color: rgba(0, 0, 0, 0.5); }
+
+.scrollbar-rail > .scroll-element.scroll-x {
+  bottom: 0;
+  height: 12px;
+  left: 0;
+  min-width: 100%;
+  padding: 3px 0 2px;
+  width: 100%; }
+
+.scrollbar-rail > .scroll-element.scroll-y {
+  height: 100%;
+  min-height: 100%;
+  padding: 0 2px 0 3px;
+  right: 0;
+  top: 0;
+  width: 12px; }
+
+.scrollbar-rail > .scroll-element .scroll-bar {
+  background-color: #d0b9a0;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+          box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); }
+
+.scrollbar-rail > .scroll-element .scroll-element_outer:hover .scroll-bar {
+  -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+          box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); }
+
+/* scrollbar height/width & offset from container borders */
+.scrollbar-rail > .scroll-content.scroll-scrolly_visible {
+  left: -17px;
+  margin-left: 17px; }
+
+.scrollbar-rail > .scroll-content.scroll-scrollx_visible {
+  margin-top: 17px;
+  top: -17px; }
+
+.scrollbar-rail > .scroll-element.scroll-x .scroll-bar {
+  height: 10px;
+  min-width: 10px;
+  top: 1px; }
+
+.scrollbar-rail > .scroll-element.scroll-y .scroll-bar {
+  left: 1px;
+  min-height: 10px;
+  width: 10px; }
+
+.scrollbar-rail > .scroll-element.scroll-x .scroll-element_outer {
+  height: 15px;
+  left: 5px; }
+
+.scrollbar-rail > .scroll-element.scroll-x .scroll-element_size {
+  height: 2px;
+  left: -10px;
+  top: 5px; }
+
+.scrollbar-rail > .scroll-element.scroll-y .scroll-element_outer {
+  top: 5px;
+  width: 15px; }
+
+.scrollbar-rail > .scroll-element.scroll-y .scroll-element_size {
+  left: 5px;
+  top: -10px;
+  width: 2px; }
+
+/* update scrollbar offset if both scrolls are visible */
+.scrollbar-rail > .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_size {
+  left: -25px; }
+
+.scrollbar-rail > .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_size {
+  top: -25px; }
+
+.scrollbar-rail > .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_track {
+  left: -25px; }
+
+.scrollbar-rail > .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_track {
+  top: -25px; }
+
+/*************** SCROLLBAR DYNAMIC ***************/
+.scrollbar-dynamic > .scroll-element,
+.scrollbar-dynamic > .scroll-element div {
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  z-index: 10; }
+
+.scrollbar-dynamic > .scroll-element div {
+  display: block;
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 100%; }
+
+.scrollbar-dynamic > .scroll-element.scroll-x {
+  bottom: 2px;
+  height: 7px;
+  left: 0;
+  min-width: 100%;
+  width: 100%; }
+
+.scrollbar-dynamic > .scroll-element.scroll-y {
+  height: 100%;
+  min-height: 100%;
+  right: 2px;
+  top: 0;
+  width: 7px; }
+
+.scrollbar-dynamic > .scroll-element .scroll-element_outer {
+  opacity: 0.3;
+  -webkit-border-radius: 12px;
+  border-radius: 12px; }
+
+.scrollbar-dynamic > .scroll-element .scroll-element_size {
+  background-color: #cccccc;
+  opacity: 0;
+  -webkit-border-radius: 12px;
+  border-radius: 12px;
+  -webkit-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  transition: opacity 0.2s; }
+
+.scrollbar-dynamic > .scroll-element .scroll-bar {
+  background-color: #6c6e71;
+  -webkit-border-radius: 7px;
+  border-radius: 7px; }
+
+/* scrollbar height/width & offset from container borders */
+.scrollbar-dynamic > .scroll-element.scroll-x .scroll-bar {
+  bottom: 0;
+  height: 7px;
+  min-width: 24px;
+  top: auto; }
+
+.scrollbar-dynamic > .scroll-element.scroll-y .scroll-bar {
+  left: auto;
+  min-height: 24px;
+  right: 0;
+  width: 7px; }
+
+.scrollbar-dynamic > .scroll-element.scroll-x .scroll-element_outer {
+  bottom: 0;
+  top: auto;
+  left: 2px;
+  -webkit-transition: height 0.2s;
+  -o-transition: height 0.2s;
+  transition: height 0.2s; }
+
+.scrollbar-dynamic > .scroll-element.scroll-y .scroll-element_outer {
+  left: auto;
+  right: 0;
+  top: 2px;
+  -webkit-transition: width 0.2s;
+  -o-transition: width 0.2s;
+  transition: width 0.2s; }
+
+.scrollbar-dynamic > .scroll-element.scroll-x .scroll-element_size {
+  left: -4px; }
+
+.scrollbar-dynamic > .scroll-element.scroll-y .scroll-element_size {
+  top: -4px; }
+
+/* update scrollbar offset if both scrolls are visible */
+.scrollbar-dynamic > .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_size {
+  left: -11px; }
+
+.scrollbar-dynamic > .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_size {
+  top: -11px; }
+
+/* hover & drag */
+.scrollbar-dynamic > .scroll-element:hover .scroll-element_outer,
+.scrollbar-dynamic > .scroll-element.scroll-draggable .scroll-element_outer {
+  overflow: hidden;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+  filter: alpha(opacity=70);
+  opacity: 0.7; }
+
+.scrollbar-dynamic > .scroll-element:hover .scroll-element_outer .scroll-element_size,
+.scrollbar-dynamic > .scroll-element.scroll-draggable .scroll-element_outer .scroll-element_size {
+  opacity: 1; }
+
+.scrollbar-dynamic > .scroll-element:hover .scroll-element_outer .scroll-bar,
+.scrollbar-dynamic > .scroll-element.scroll-draggable .scroll-element_outer .scroll-bar {
+  height: 100%;
+  width: 100%;
+  -webkit-border-radius: 12px;
+  border-radius: 12px; }
+
+.scrollbar-dynamic > .scroll-element.scroll-x:hover .scroll-element_outer,
+.scrollbar-dynamic > .scroll-element.scroll-x.scroll-draggable .scroll-element_outer {
+  height: 20px;
+  min-height: 7px; }
+
+.scrollbar-dynamic > .scroll-element.scroll-y:hover .scroll-element_outer,
+.scrollbar-dynamic > .scroll-element.scroll-y.scroll-draggable .scroll-element_outer {
+  min-width: 7px;
+  width: 20px; }
+
+/*************** SCROLLBAR GOOGLE CHROME ***************/
+.scrollbar-chrome > .scroll-element,
+.scrollbar-chrome > .scroll-element div {
+  border: none;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  z-index: 10; }
+
+.scrollbar-chrome > .scroll-element {
+  background-color: #ffffff; }
+
+.scrollbar-chrome > .scroll-element div {
+  display: block;
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 100%; }
+
+.scrollbar-chrome > .scroll-element .scroll-element_track {
+  background: #f1f1f1;
+  border: 1px solid #dbdbdb; }
+
+.scrollbar-chrome > .scroll-element.scroll-x {
+  bottom: 0;
+  height: 16px;
+  left: 0;
+  min-width: 100%;
+  width: 100%; }
+
+.scrollbar-chrome > .scroll-element.scroll-y {
+  height: 100%;
+  min-height: 100%;
+  right: 0;
+  top: 0;
+  width: 16px; }
+
+.scrollbar-chrome > .scroll-element .scroll-bar {
+  background-color: #d9d9d9;
+  border: 1px solid #bdbdbd;
+  cursor: default;
+  -webkit-border-radius: 2px;
+  border-radius: 2px; }
+
+.scrollbar-chrome > .scroll-element .scroll-bar:hover {
+  background-color: #c2c2c2;
+  border-color: #a9a9a9; }
+
+.scrollbar-chrome > .scroll-element.scroll-draggable .scroll-bar {
+  background-color: #919191;
+  border-color: #7e7e7e; }
+
+/* scrollbar height/width & offset from container borders */
+.scrollbar-chrome > .scroll-content.scroll-scrolly_visible {
+  left: -16px;
+  margin-left: 16px; }
+
+.scrollbar-chrome > .scroll-content.scroll-scrollx_visible {
+  top: -16px;
+  margin-top: 16px; }
+
+.scrollbar-chrome > .scroll-element.scroll-x .scroll-bar {
+  height: 8px;
+  min-width: 10px;
+  top: 3px; }
+
+.scrollbar-chrome > .scroll-element.scroll-y .scroll-bar {
+  left: 3px;
+  min-height: 10px;
+  width: 8px; }
+
+.scrollbar-chrome > .scroll-element.scroll-x .scroll-element_outer {
+  border-left: 1px solid #dbdbdb; }
+
+.scrollbar-chrome > .scroll-element.scroll-x .scroll-element_track {
+  height: 14px;
+  left: -3px; }
+
+.scrollbar-chrome > .scroll-element.scroll-x .scroll-element_size {
+  height: 14px;
+  left: -4px; }
+
+.scrollbar-chrome > .scroll-element.scroll-y .scroll-element_outer {
+  border-top: 1px solid #dbdbdb; }
+
+.scrollbar-chrome > .scroll-element.scroll-y .scroll-element_track {
+  top: -3px;
+  width: 14px; }
+
+.scrollbar-chrome > .scroll-element.scroll-y .scroll-element_size {
+  top: -4px;
+  width: 14px; }
+
+/* update scrollbar offset if both scrolls are visible */
+.scrollbar-chrome > .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_size {
+  left: -19px; }
+
+.scrollbar-chrome > .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_size {
+  top: -19px; }
+
+.scrollbar-chrome > .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_track {
+  left: -19px; }
+
+.scrollbar-chrome > .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_track {
+  top: -19px; }
+
 .section-title, .page-title {
   color: #a6a6a6;
   font-size: 16px;
@@ -176,6 +917,12 @@ label {
     -webkit-border-radius: 50%;
             border-radius: 50%;
     margin-right: 12px; }
+    .color-tab .circle.blue-bg {
+      background-color: #80bfca; }
+    .color-tab .circle.orange-bg {
+      background-color: #ff9a38; }
+    .color-tab .circle.green-bg {
+      background-color: #59b66d; }
   .color-tab span {
     font-size: 16px;
     color: #a6a6a6; }
@@ -264,15 +1011,34 @@ label {
     padding: 18px;
     border-left: 1px solid #e3e3e3; }
     .header .user-info.user-valet {
+      color: #979797;
       font-size: 20px;
       font-weight: 400; }
+      .header .user-info.user-valet span {
+        margin: 0 20px; }
+    .header .user-info.user-notifications .icon {
+      position: relative; }
+      .header .user-info.user-notifications .icon::after {
+        content: "";
+        height: 8px;
+        width: 8px;
+        -webkit-border-radius: 50%;
+                border-radius: 50%;
+        background-color: #f58220;
+        position: absolute;
+        top: -3px;
+        right: -1px; }
     .header .user-info.link {
       -webkit-flex-wrap: nowrap;
           -ms-flex-wrap: nowrap;
               flex-wrap: nowrap; }
+      .header .user-info.link .icon {
+        margin-right: 15px; }
+        .header .user-info.link .icon::before {
+          vertical-align: middle; }
     .header .user-info .icon {
-      height: 21px;
-      width: 10px; }
+      color: #979797;
+      font-size: 18px; }
 
 .aside {
   background-color: #191919;
@@ -292,24 +1058,26 @@ label {
         background-color: #979797; }
         .aside .menu-control .menu-btn span + span {
           margin-top: 5px; }
-  .aside .aside-menu ul li {
-    color: #979797; }
-    .aside .aside-menu ul li a {
-      display: block;
-      padding: 14px;
-      font-size: 14px;
-      border-left: 4px solid transparent; }
-      .aside .aside-menu ul li a .icon {
-        font-size: 17px;
-        margin-right: 15px; }
-      .aside .aside-menu ul li a:hover {
-        background-color: #282828;
-        color: #fff;
-        border-left-color: #f58220; }
-      .aside .aside-menu ul li a.active {
-        background-color: #282828;
-        color: #fff;
-        border-left-color: #f58220; }
+  .aside .aside-menu ul {
+    padding-bottom: 27px; }
+    .aside .aside-menu ul li {
+      color: #979797; }
+      .aside .aside-menu ul li a {
+        display: block;
+        padding: 14px;
+        font-size: 14px;
+        border-left: 4px solid transparent; }
+        .aside .aside-menu ul li a .icon {
+          font-size: 17px;
+          margin-right: 15px; }
+        .aside .aside-menu ul li a:hover {
+          background-color: #282828;
+          color: #fff;
+          border-left-color: #f58220; }
+        .aside .aside-menu ul li a.active {
+          background-color: #282828;
+          color: #fff;
+          border-left-color: #f58220; }
 
 .your-manager {
   padding: 27px 18px;
@@ -340,10 +1108,12 @@ label {
 
 .panel {
   background-color: #fff;
-  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
-          box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1); }
+  -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1); }
   .panel + .panel {
     margin-top: 18px; }
+  .panel.links .panel-body {
+    padding: 25px 18px; }
   .panel .panel-header {
     border-bottom: 1px solid #e3e3e3;
     padding: 18px; }
@@ -385,7 +1155,100 @@ label {
   padding-bottom: 30px; }
 
 .modal {
-  background-color: #fff; }
+  background-color: #fff;
+  display: none; }
+  .modal .modal-header {
+    padding: 18px;
+    border-bottom: 1px solid #e3e3e3; }
+  .modal .modal-footer {
+    padding: 18px;
+    border-top: 1px solid #e3e3e3; }
+
+#add-links-modal {
+  width: 1075px; }
+  #add-links-modal .checkbox-group {
+    width: 30%; }
+
+.checkbox-wrap {
+  padding: 30px 0; }
+  .checkbox-wrap .checkboxes {
+    padding-top: 30px;
+    overflow-y: auto; }
+    .checkbox-wrap .checkboxes .scrollbar-inner {
+      -webkit-flex-wrap: wrap;
+          -ms-flex-wrap: wrap;
+              flex-wrap: wrap;
+      height: 150px;
+      padding-right: 20px; }
+    .checkbox-wrap .checkboxes .checkbox-group {
+      padding: 12px;
+      margin-right: 18px; }
+      .checkbox-wrap .checkboxes .checkbox-group .icon {
+        margin-left: auto;
+        opacity: 0; }
+      .checkbox-wrap .checkboxes .checkbox-group:hover {
+        background-color: #f5f5f2; }
+        .checkbox-wrap .checkboxes .checkbox-group:hover .icon {
+          opacity: 1; }
+
+input[type="checkbox"] {
+  display: none; }
+  input[type="checkbox"] + label {
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    input[type="checkbox"] + label::before {
+      content: "";
+      display: inline-block;
+      height: 18px;
+      width: 18px;
+      border: 1px solid #e3e3e3;
+      margin-right: 16px; }
+  input[type="checkbox"]:checked + label::before {
+    background: #04ae00 url(../img/checkbox-bg.png) no-repeat center; }
+
+input[type="radio"] {
+  display: none; }
+
+#slider {
+  height: 6px;
+  border: none;
+  background-color: #e3e3e3;
+  -webkit-border-radius: 0px;
+          border-radius: 0px; }
+  #slider .ui-slider-range {
+    background-color: #f58220;
+    -webkit-border-radius: 0px;
+            border-radius: 0px; }
+  #slider #custom-handle {
+    top: 12px;
+    width: 0;
+    height: 0;
+    border-left: 14px solid transparent;
+    border-right: 14px solid transparent;
+    border-bottom: 22px solid #f58220;
+    border-top: none;
+    -webkit-transform: translateX(-6px);
+        -ms-transform: translateX(-6px);
+            transform: translateX(-6px); }
+    #slider #custom-handle:focus, #slider #custom-handle:hover {
+      outline: none;
+      background: none;
+      color: #333; }
+    #slider #custom-handle span {
+      position: absolute;
+      top: 34px;
+      left: -22px;
+      font-size: 14px;
+      font-weight: 300; }
 
 .guide-wrap {
   padding: 20px; }
@@ -399,6 +1262,8 @@ main {
 .links .table {
   margin: 18px 0; }
 
-h1 {
-  color: #000;
-  font-size: 3em; }
+.generate-link-form .form-control {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1; }

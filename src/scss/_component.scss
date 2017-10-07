@@ -145,11 +145,19 @@
     background-color: $tabBgHoverActive;
   }
   .circle {
-
     height: 16px;
     width: 16px;
     border-radius: 50%;
     margin-right: 12px;
+    &.blue-bg{
+      background-color: #80bfca;
+    }
+    &.orange-bg{
+      background-color: #ff9a38;
+    }
+    &.green-bg{
+      background-color: #59b66d;
+    }
   }
   span {
     font-size: $colorTabFontSize;
@@ -260,15 +268,41 @@
     padding: $defaultIndent;
     border-left: 1px solid $lightGrey;
     &.user-valet {
+      color: $darkGrey;
       font-size: 20px;
       font-weight: $fontRegular;
+      span{
+        margin: 0 20px;
+      }
+    }
+    &.user-notifications{
+      .icon{
+        position: relative;
+        &::after{
+        content: "";
+        height: 8px;
+        width: 8px;
+        border-radius: 50%;
+        background-color: $orange;
+        position: absolute;
+        top: -3px;
+        right: -1px;
+        }
+      }
     }
     &.link {
       flex-wrap: nowrap;
+      .icon{
+        margin-right: 15px;
+        &::before{
+          vertical-align: middle;
+        }
+      }
     }
     .icon {
-      height: 21px;
-      width: 10px;
+      color: $darkGrey;
+      font-size: 18px;
+
     }
   }
 }
@@ -299,6 +333,7 @@
   }
   .aside-menu {
     ul {
+      padding-bottom: 27px;
       li {
         color: $darkGrey;
         a {
@@ -362,9 +397,14 @@
 
 .panel{
   background-color: #fff;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .1);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, .1);
   & + .panel{
     margin-top: $defaultIndent;
+  }
+  &.links{
+    .panel-body{
+      padding: 25px $defaultIndent;
+    }
   }
   .panel-header{
     border-bottom: 1px solid $lightGrey;
@@ -414,5 +454,116 @@
 //modals
 
 .modal{
-  background-color: #fff;
+  background-color: $white;
+  display: none;
+  .modal-header{
+    padding: $defaultIndent;
+    border-bottom: 1px solid $lightGrey;
+  }
+  .modal-footer{
+    padding: $defaultIndent;
+    border-top: 1px solid $lightGrey;
+  }
+}
+
+#add-links-modal{
+  width: 1075px;
+  .checkbox-group{
+    width: 30%;
+  }
+}
+
+// checkbox and radio
+
+.checkbox-wrap{
+  padding: 30px 0;
+  .checkboxes{
+    padding-top: 30px;
+    overflow-y: auto;
+    .scrollbar-inner{
+      flex-wrap: wrap;
+      height: 150px;
+      padding-right: 20px;
+    }
+    .checkbox-group{
+      padding: 12px;
+      margin-right: 18px;
+      .icon{
+        margin-left: auto;
+        opacity: 0;
+      }
+      &:hover{
+        background-color: $xsLightGrey;
+        .icon{
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+input{
+  &[type="checkbox"]{
+    display: none;
+    & + label{
+      font-size: 14px;
+      color: $black;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      &::before{
+        content: "";
+        display: inline-block;
+        height: 18px;
+        width: 18px;
+        border: 1px solid $lightGrey;
+        margin-right: 16px;
+      }
+    }
+    &:checked{
+      & + label{
+        &::before{
+          background: $green url(../img/checkbox-bg.png) no-repeat center;
+        }
+      }
+    }
+  }
+  &[type="radio"]{
+    display: none;
+  }
+}
+
+// range slider
+
+#slider {
+  height: 6px;
+  border: none;
+  background-color: $lightGrey;
+  border-radius: 0px;
+  .ui-slider-range{
+    background-color: $orange;
+    border-radius: 0px;
+  }
+  #custom-handle {
+    top: 12px;
+    width: 0;
+    height: 0;
+    border-left: 14px solid transparent;
+    border-right: 14px solid transparent;
+    border-bottom: 22px solid $orange;
+    border-top: none;
+    transform: translateX(-6px);
+    &:focus, &:hover {
+      outline: none;
+      background: none;
+      color: $black;
+    }
+    span {
+      position: absolute;
+      top: 34px;
+      left: -22px;
+      font-size: 14px;
+      font-weight: $fontLight;
+    }
+  }
 }
