@@ -1,5 +1,64 @@
 //component
 
+// loader
+
+#loading{
+  background-color: $orange;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+  margin-top: 0px;
+  top: 0px;
+  transition: opacity .3s linear, z-index .1s linear .3s;
+}
+#loading.hide{
+  z-index: -1;
+  opacity: 0;
+}
+#loading-center{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+#loading-center-absolute {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 200px;
+  width: 200px;
+  margin-top: -100px;
+  margin-left: -100px;
+}
+#object{
+  width: 80px;
+  height: 80px;
+  background-color: #FFF;
+  -webkit-animation: animate 1s infinite ease-in-out;
+  animation: animate 1s infinite ease-in-out;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 60px;
+}
+@-webkit-keyframes animate {
+  0% { -webkit-transform: perspective(160px); }
+  50% { -webkit-transform: perspective(160px) rotateY(-180deg); }
+  100% { -webkit-transform: perspective(160px) rotateY(-180deg) rotateX(-180deg); }
+}
+
+@keyframes animate {
+  0% {
+    transform: perspective(160px) rotateX(0deg) rotateY(0deg);
+    -webkit-transform: perspective(160px) rotateX(0deg) rotateY(0deg);
+  } 50% {
+      transform: perspective(160px) rotateX(-180deg) rotateY(0deg);
+      -webkit-transform: perspective(160px) rotateX(-180deg) rotateY(0deg) ;
+    } 100% {
+        transform: perspective(160px) rotateX(-180deg) rotateY(-180deg);
+        -webkit-transform: perspective(160px) rotateX(-180deg) rotateY(-180deg);
+      }
+}
+
 // title
 %title{
   color: $titleColor;
@@ -65,14 +124,11 @@
 .table {
   border-collapse: collapse;
   font-size: $tableFontSize;
-  &.full-width{
-    width: 100%;
-  }
   tbody {
     tr {
       &:last-child{
         td{
-          border-bottom: 1px solid $lightGrey;
+          border-bottom: $defaultBorder;
         }
       }
       &:hover {
@@ -97,7 +153,7 @@
       color: $grey;
     }
     td {
-      border-top: 1px solid $lightGrey;
+      border-top: $defaultBorder;
       padding: 18px;
       &.td-title {
         color: $grey;
@@ -201,7 +257,7 @@
 }
 .date-input-wrap{
   padding: 4px 0;
-  border: 1px solid $lightGrey;
+  border: $defaultBorder;
   border-radius: 3px;
   display: inline-block;
   vertical-align: middle;
@@ -212,7 +268,7 @@
     font-size: calc($textareaFont + 2px);
   }
   #to{
-    border-left: 1px solid $lightGrey;
+    border-left: $defaultBorder;
     background: url("../img/calendar.svg") no-repeat 90%;
     background-size: 13px 13px;
   }
@@ -258,7 +314,7 @@
 .header {
   padding-left: 800px;
   background-color: #fff;
-  border-bottom: 1px solid $lightGrey;
+  border-bottom: $defaultBorder;
   right: 0;
   left: 0;
   .container-fluid {
@@ -266,8 +322,8 @@
   }
   .user-info {
     padding: $defaultIndent;
-    border-left: 1px solid $lightGrey;
-    &.user-valet {
+    border-left: $defaultBorder;
+    &.user-wallet {
       color: $darkGrey;
       font-size: 20px;
       font-weight: $fontRegular;
@@ -302,11 +358,44 @@
     .icon {
       color: $darkGrey;
       font-size: 18px;
-
+    }
+    &:hover{
+      span{
+        color: $orange;
+      }
+      .icon{
+        color: $orange;
+      }
     }
   }
 }
 
+.dropdown-menu{
+  display: none;
+  position: absolute;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  top: 100%;
+  left: 0;
+  ul{
+    li{
+      font-weight: $fontLight;
+      padding: $defaultIndent;
+      &:hover{
+        color: $orange;
+      }
+      & + li{
+        border-top: $defaultBorder;
+      }
+    }
+  }
+}
+
+.dropdown-wrap{
+  position: relative;
+  cursor: pointer;
+}
   //aside
 
 .aside {
@@ -336,6 +425,11 @@
       padding-bottom: 27px;
       li {
         color: $darkGrey;
+        &.active, &:hover{
+          background-color: #282828;
+          color: $white;
+          border-left: 4px solid $orange;
+        }
         a {
           display: block;
           padding: 14px;
@@ -344,16 +438,6 @@
           .icon{
             font-size: 17px;
             margin-right: 15px;
-          }
-          &:hover {
-            background-color: #282828;
-            color: $white;
-            border-left-color: $orange;
-          }
-          &.active{
-            background-color: #282828;
-            color: $white;
-            border-left-color: $orange;
           }
         }
       }
@@ -392,8 +476,9 @@
 .content-wrapper{
   padding: $defaultIndent;
   height: calc(100vh - 60px);
-  overflow-y: auto;
 }
+
+// panel
 
 .panel{
   background-color: #fff;
@@ -407,7 +492,7 @@
     }
   }
   .panel-header{
-    border-bottom: 1px solid $lightGrey;
+    border-bottom: $defaultBorder;
     padding: $defaultIndent;
   }
   .panel-body{
@@ -415,7 +500,7 @@
   }
   .panel-form{
     padding: 40px 0;
-    border-bottom: 1px solid $lightGrey;
+    border-bottom: $defaultBorder;
     text-align: center;
     form{
       width: 455px;
@@ -436,8 +521,9 @@
 }
 .panel-date{
   padding: 30px 0;
-  border-bottom: 1px solid $lightGrey;
+  border-bottom: $defaultBorder;
 }
+
 // label group
 .label-group{
   display: flex;
@@ -458,11 +544,32 @@
   display: none;
   .modal-header{
     padding: $defaultIndent;
-    border-bottom: 1px solid $lightGrey;
+    border-bottom: $defaultBorder;
+  }
+  .filters{
+    padding: 25px $defaultIndent;
+    .section-title{
+      margin-bottom: 15px;
+    }
+    form{
+      &:first-child{
+        flex-grow: 1;
+      }
+      input{
+        flex-grow: 1;
+        margin-right: 20px;
+      }
+      .jq-selectbox{
+        flex-grow: 1;
+      }
+      & + form{
+        margin-left: $defaultIndent;
+      }
+    }
   }
   .modal-footer{
     padding: $defaultIndent;
-    border-top: 1px solid $lightGrey;
+    border-top: $defaultBorder;
   }
 }
 
@@ -516,7 +623,7 @@ input{
         display: inline-block;
         height: 18px;
         width: 18px;
-        border: 1px solid $lightGrey;
+        border: $defaultBorder;
         margin-right: 16px;
       }
     }
@@ -530,6 +637,51 @@ input{
   }
   &[type="radio"]{
     display: none;
+  }
+}
+.jq-selectbox{
+  .jq-selectbox__select{
+    height: auto;
+    padding: 12px 15px;
+    color: $inputColor;
+    border: 1px solid $inputBorderDefault;
+    border-radius: 2px;
+    background: none;
+    &:hover {
+      cursor: pointer;
+      color: $inputColorHover;
+      border-color: $inputBorderHover;
+    }
+  }
+  &.disabled{
+    .jq-selectbox__select{
+      height: auto;
+      padding: 12px 15px;
+      color: $inputColor;
+      border: 1px solid $inputBorderDefault;
+      border-radius: 2px;
+      background: none;
+      &:hover {
+        cursor: pointer;
+        color: $inputColorHover;
+        border-color: $inputBorderHover;
+      }
+    }
+  }
+  .jq-selectbox__dropdown{
+    ul{
+      li{
+        font-weight: $fontLight;
+        padding: $defaultIndent;
+        &:hover{
+          color: $orange;
+          background-color: #fff;
+        }
+        &.selected{
+          background-color: #fff;
+        }
+      }
+    }
   }
 }
 
@@ -567,3 +719,4 @@ input{
     }
   }
 }
+
