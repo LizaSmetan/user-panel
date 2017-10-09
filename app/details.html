@@ -7,9 +7,9 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Template</title>
 
-	<!-- GOOGLE FONTS -->
-	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-    
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+
     <!-- font awesome -->
     <link rel="stylesheet" href="css/font-awesome.css">
 
@@ -21,8 +21,8 @@
     <link rel="stylesheet" href="css/style.css">
 
 </head>
+
 <body>
-<!-- header start -->
 <!-- header start -->
 <header class="fixed-to-top header">
     <div class="flex-container container-fluid">
@@ -153,6 +153,35 @@
         <h3 class="page-title">add url</h3>
         <div class="close"><span class="icon icon-close"></span></div>
     </div>
+    <div class="filters">
+        <div class="flex-container">
+            <form>
+                <div class="section-title">
+                    <span>Scheme name</span>
+                </div>
+                <div class="flex-container">
+                    <input type="text" class="form-control" placeholder="Name">
+                    <select class="filters-select width-auto">
+                        <option class="disabled">Select compain</option>
+                        <option>Please select this compain</option>
+                        <option>Compain</option>
+                        <option>Select compain</option>
+                    </select>
+                </div>
+            </form>
+            <form>
+                <div class="section-title">
+                    <span>Language</span>
+                </div>
+                <select class="filters-select">
+                    <option class="lang-en">EN</option>
+                    <option class="lang-de">DE</option>
+                    <option class="lang-ua">UA</option>
+                    <option class="lang-ru">RU</option>
+                </select>
+            </form>
+        </div>
+    </div>
     <div class="modal-body">
         <div class="checkbox-wrap">
             <h3 class="section-title">Select websites</h3>
@@ -221,16 +250,11 @@
                 </div>
             </div>
         </div>
-        <!--<div class="filtres">-->
-            <!--<select name="" id="">-->
-                <!--<option value=""></option>-->
-            <!--</select>-->
-        <!--</div>-->
     </div>
     <div class="modal-footer">
         <form class="flex-container align-items-center generate-link-form">
             <input type="text" class="form-control" placeholder="Generate link">
-            <button class="btn btn-disabled">Copy link</button>
+            <button class="btn btn-disabled"><span class="icon icon-links"></span>Copy link</button>
             <button class="btn btn-action">Save</button>
         </form>
     </div>
@@ -251,6 +275,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.min.js"></script>
 <script src="js/jquery.bpopup.min.js"></script>
 <script src="js/jquery.scrollbar.js"></script>
+<script src="js/jquery.formstyler.min.js"></script>
 <!--Init plugins-->
 <script src="js/init.js"></script>
 <script src="js/plugins.min.js"></script>

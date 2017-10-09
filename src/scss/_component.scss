@@ -548,28 +548,73 @@
   }
   .filters{
     padding: 25px $defaultIndent;
+    border-bottom: $defaultBorder;
     .section-title{
       margin-bottom: 15px;
     }
     form{
       &:first-child{
         flex-grow: 1;
+        input{
+          width: 50%;
+          margin-right: 20px;
+        }
+        .jq-selectbox{
+          flex-grow: 1;
+        }
       }
-      input{
-        flex-grow: 1;
-        margin-right: 20px;
-      }
-      .jq-selectbox{
-        flex-grow: 1;
+      &:last-child{
+        .lang-en{
+          background: url("../img/lang-en-bg.png") no-repeat;
+          background-position: 10px;
+        }
+        .lang-de{
+          background: url("../img/lang-de-bg.png") no-repeat;
+          background-position: 10px;
+        }
+        .lang-ua{
+          background: url("../img/lang-ua-bg.png") no-repeat;
+          background-position: 10px;
+        }
+        .lang-ru{
+          background: url("../img/lang-ru-bg.png") no-repeat;
+          background-position: 10px;
+        }
+        .jq-selectbox {
+          .jq-selectbox__select{
+            padding-left: 57px;
+          }
+          width: 132px;
+          li{
+            padding-left: 57px;
+          }
+        }
       }
       & + form{
         margin-left: $defaultIndent;
       }
     }
   }
+  .modal-body{
+    padding-left: $defaultIndent;
+    padding-right: $defaultIndent;
+  }
   .modal-footer{
     padding: $defaultIndent;
     border-top: $defaultBorder;
+    .generate-link-form{
+      input{
+        margin-right: 16px;
+      }
+      .btn{
+        line-height: 1em;
+        &.btn-disabled{
+          span{
+            margin-right: 15px;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -640,6 +685,14 @@ input{
   }
 }
 .jq-selectbox{
+  &:focus{
+    outline: none;
+  }
+  &.focused{
+    .jq-selectbox__select{
+      border: 1px solid $inputBorderDefault;
+    }
+  }
   .jq-selectbox__select{
     height: auto;
     padding: 12px 15px;
@@ -647,17 +700,34 @@ input{
     border: 1px solid $inputBorderDefault;
     border-radius: 2px;
     background: none;
+    box-shadow: none;
+    .jq-selectbox__select-text{
+      line-height: 1em;
+      color: $black;
+    }
+    .jq-selectbox__trigger{
+      border-left: none;
+      .jq-selectbox__trigger-arrow{
+        border: none;
+        width: 11px;
+        height: 7px;
+        background: url("../img/arrow-down.svg") no-repeat;
+        top: 16px;
+        right: 17px;
+      }
+    }
     &:hover {
       cursor: pointer;
       color: $inputColorHover;
-      border-color: $inputBorderHover;
     }
   }
   &.disabled{
+    .jq-selectbox__select-text{
+      color: $grey;
+    }
     .jq-selectbox__select{
       height: auto;
       padding: 12px 15px;
-      color: $inputColor;
       border: 1px solid $inputBorderDefault;
       border-radius: 2px;
       background: none;
@@ -666,19 +736,41 @@ input{
         color: $inputColorHover;
         border-color: $inputBorderHover;
       }
+      &:focus{
+        outline: none;
+      }
     }
   }
   .jq-selectbox__dropdown{
+    box-shadow: none;
+    margin: 0;
+    &:focus{
+      outline: none;
+    }
     ul{
+      &:focus{
+        outline: none;
+      }
       li{
         font-weight: $fontLight;
-        padding: $defaultIndent;
+        padding: 12px 15px;
+        line-height: 1em;
+        & + li{
+          border-top: $defaultBorder;
+        }
         &:hover{
           color: $orange;
           background-color: #fff;
         }
+        &:focus{
+          outline: none;
+        }
         &.selected{
           background-color: #fff;
+          color: $black;
+        }
+        &.disabled{
+          color: $grey;
         }
       }
     }
@@ -716,6 +808,21 @@ input{
       left: -22px;
       font-size: 14px;
       font-weight: $fontLight;
+    }
+  }
+}
+
+// scrollbar
+
+.scrollbar-inner{
+  & > .scroll-element{
+    .scroll-element_track{
+      background-color: $lightGrey;
+      opacity: 1;
+    }
+    .scroll-bar{
+      background-color: $darkGrey;
+      opacity: 1;
     }
   }
 }

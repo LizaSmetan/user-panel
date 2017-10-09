@@ -22,6 +22,7 @@
 
 </head>
 
+<body>
 <!-- header start -->
 <header class="fixed-to-top header">
     <div class="flex-container container-fluid">
@@ -81,13 +82,13 @@
                 </a>
             </li>
             <li>
-                <a href="" data-modal="#add-links-modal">
+                <a href="" class="aside-menu-modal" data-modal="#add-links-modal">
                     <span class="text-center icon icon-links"></span>
                     <span class="menu-link">Links</span>
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="" class="aside-menu-modal" data-modal="#add-banners-modal">
                     <span class="text-center icon icon-banners"></span>
                     <span class="menu-link">Banners</span>
                 </a>
@@ -260,8 +261,8 @@
                     <input type="text" class="form-control" placeholder="Name">
                     <select class="filters-select width-auto">
                         <option class="disabled">Select compain</option>
-                        <option>Select compain</option>
-                        <option>Select compain</option>
+                        <option>Please select this compain</option>
+                        <option>Compain</option>
                         <option>Select compain</option>
                     </select>
                 </div>
@@ -271,7 +272,10 @@
                     <span>Language</span>
                 </div>
                 <select class="filters-select">
-                    <option></option>
+                    <option class="lang-en">EN</option>
+                    <option class="lang-de">DE</option>
+                    <option class="lang-ua">UA</option>
+                    <option class="lang-ru">RU</option>
                 </select>
             </form>
         </div>
@@ -348,11 +352,13 @@
     <div class="modal-footer">
         <form class="flex-container align-items-center generate-link-form">
             <input type="text" class="form-control" placeholder="Generate link">
-            <button class="btn btn-disabled">Copy link</button>
+            <button class="btn btn-disabled"><span class="icon icon-links"></span>Copy link</button>
             <button class="btn btn-action">Save</button>
         </form>
     </div>
 </div>
+
+<div class="modal" id="add-banners-modal"></div>
 
 <!--loader-->
 <div id="loading">
