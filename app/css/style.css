@@ -48,6 +48,9 @@ label {
 .text-center {
   text-align: center; }
 
+.text-left {
+  text-align: left; }
+
 .fixed-to-top {
   position: fixed;
   z-index: 99;
@@ -76,6 +79,11 @@ label {
 
 .full-width {
   width: 100%; }
+
+.content-wrapper {
+  padding: 18px;
+  height: -webkit-calc(100vh - 60px);
+  height: calc(100vh - 60px); }
 
 /*************** SCROLLBAR BASE CSS ***************/
 .scroll-wrapper {
@@ -1581,10 +1589,19 @@ input[type='submit'].styler[disabled] {
     margin: -8px -10px;
     -webkit-border-radius: 2px;
             border-radius: 2px;
-    cursor: pointer; }
+    cursor: pointer;
+    display: inline-block; }
+    .table .table-sort .icon {
+      margin-left: 10px;
+      opacity: 0; }
+      .table .table-sort .icon:before {
+        position: relative;
+        bottom: 3px; }
     .table .table-sort:hover {
       background-color: #e3e3e3;
       color: #333; }
+      .table .table-sort:hover .icon {
+        opacity: 1; }
   .table tr th {
     padding: 30px 18px;
     color: #bababa; }
@@ -1601,11 +1618,13 @@ input[type='submit'].styler[disabled] {
   -webkit-border-radius: 2px;
           border-radius: 2px; }
 
-.pagination li {
-  display: inline-block; }
-  .pagination li a {
-    display: inline-block;
-    padding: 18px; }
+.pagination {
+  padding: 25px; }
+  .pagination li {
+    display: inline-block; }
+    .pagination li a {
+      display: inline-block;
+      padding: 18px; }
 
 .color-tab {
   padding: 12px 18px;
@@ -1835,15 +1854,11 @@ input[type='submit'].styler[disabled] {
         .your-manager .manager-info .manager-photo .status.online {
           background-color: #04ae00; }
 
-.content-wrapper {
-  padding: 18px;
-  height: -webkit-calc(100vh - 60px);
-  height: calc(100vh - 60px); }
-
 .panel {
   background-color: #fff;
   -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-          box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1); }
+          box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  margin-bottom: 25px; }
   .panel + .panel {
     margin-top: 18px; }
   .panel.links .panel-body {
@@ -1860,6 +1875,9 @@ input[type='submit'].styler[disabled] {
     .panel .panel-form form {
       width: 455px;
       display: inline-block; }
+      .panel .panel-form form .label-group label {
+        font-weight: 700;
+        color: #979797; }
       .panel .panel-form form .label-group + .label-group {
         margin-top: 15px; }
       .panel .panel-form form .form-control {
@@ -1924,11 +1942,11 @@ input[type='submit'].styler[disabled] {
     .modal .filters form:last-child .lang-ru {
       background: url("../img/lang-ru-bg.png") no-repeat;
       background-position: 10px; }
-    .modal .filters form:last-child .jq-selectbox {
+    .modal .filters form:last-child .jq-selectbox.select-language {
       width: 132px; }
-      .modal .filters form:last-child .jq-selectbox .jq-selectbox__select {
+      .modal .filters form:last-child .jq-selectbox.select-language .jq-selectbox__select {
         padding-left: 57px; }
-      .modal .filters form:last-child .jq-selectbox li {
+      .modal .filters form:last-child .jq-selectbox.select-language li {
         padding-left: 57px; }
     .modal .filters form + form {
       margin-left: 18px; }
@@ -1944,11 +1962,6 @@ input[type='submit'].styler[disabled] {
       line-height: 1em; }
       .modal .modal-footer .generate-link-form .btn.btn-disabled span {
         margin-right: 15px; }
-
-#add-links-modal {
-  width: 1075px; }
-  #add-links-modal .checkbox-group {
-    width: 30%; }
 
 .checkbox-wrap {
   padding: 30px 0; }
@@ -2016,7 +2029,7 @@ input[type="radio"] {
   -webkit-box-shadow: none;
           box-shadow: none; }
   .jq-selectbox .jq-selectbox__select .jq-selectbox__select-text {
-    line-height: 1em;
+    line-height: normal;
     color: #333; }
   .jq-selectbox .jq-selectbox__select .jq-selectbox__trigger {
     border-left: none; }
@@ -2205,3 +2218,33 @@ main {
     margin-bottom: 75px; }
     .general-statistic .panel-body .chart-color-tabs .color-tab + .color-tab {
       margin-left: 30px; }
+
+#add-links-modal {
+  width: 1075px; }
+  #add-links-modal .checkbox-group {
+    width: 30%; }
+
+#add-banners-modal {
+  width: 1075px; }
+  #add-banners-modal .filters .flex-container:first-child {
+    margin-bottom: 35px; }
+  #add-banners-modal .filters .flex-container:last-child form {
+    width: 33.3333%; }
+    #add-banners-modal .filters .flex-container:last-child form .jq-selectbox {
+      width: 100%; }
+  #add-banners-modal .checkbox-wrap {
+    width: 50%;
+    padding-left: 18px;
+    padding-right: 18px; }
+    #add-banners-modal .checkbox-wrap + .checkbox-wrap {
+      border-left: 1px solid #e3e3e3; }
+
+#login-modal .modal-body {
+  padding: 48px; }
+  #login-modal .modal-body form .form-control {
+    margin-right: 18px; }
+    #login-modal .modal-body form .form-control input {
+      margin-left: 10px;
+      width: 100%; }
+  #login-modal .modal-body form .btn {
+    padding: 10px 62px; }

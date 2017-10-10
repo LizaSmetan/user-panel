@@ -5,7 +5,9 @@
 .text-center{
   text-align: center;
 }
-
+.text-left{
+    text-align: left;
+}
 //class position fixed
 .fixed-to-top{
     position: fixed;
@@ -32,4 +34,11 @@
 }
 .full-width{
     width: 100%;
+}
+
+// Content wrapper
+
+.content-wrapper{
+    padding: $defaultIndent;
+    height: calc(100vh - 60px);
 }

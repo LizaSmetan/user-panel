@@ -46,7 +46,7 @@
                 <a href=""><span class="icon icon-profile"></span>Leonardo Dicaprio</a>
             </div>
             <div class="user-info">
-                <a href=""><span class="icon icon-quit"></span></a>
+                <a href="" data-modal="#login-modal"><span class="icon icon-quit"></span></a>
             </div>
         </div>
     </div>
@@ -88,7 +88,7 @@
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="" class="aside-menu-modal" data-modal="#add-banners-modal">
                     <span class="text-center icon icon-banners"></span>
                     <span class="menu-link">Banners</span>
                 </a>
@@ -127,7 +127,7 @@
 <!-- aside end-->
 <main>
     <div class="content-wrapper">
-        <div class="panel links">
+        <div class="panel personal-data">
             <div class="panel-header">
                 <h3 class="page-title">Personal data</h3>
             </div>
@@ -149,6 +149,42 @@
                         <div class="label-group">
                             <label for="user-phone">Phone number</label>
                             <input type="text" class="form-control" id="user-phone">
+                        </div>
+                    </form>
+                </div>
+                <div class="panel-form row">
+                    <form>
+                        <div class="label-group">
+                            <label for="user-skype">Skype</label>
+                            <input type="text" class="form-control" id="user-skype">
+                        </div>
+                        <div class="label-group">
+                            <label for="user-icq">ICQ</label>
+                            <input type="text" class="form-control" id="user-icq">
+                        </div>
+                        <div class="label-group">
+                            <label for="user-email">Msn</label>
+                            <input type="text" class="form-control" id="user-msn">
+                        </div>
+                    </form>
+                </div>
+                <div class="panel-form row">
+                    <form>
+                        <div class="label-group">
+                            <label for="user-wallet">Wallet</label>
+                            <input type="text" class="form-control" id="user-wallet">
+                        </div>
+                    </form>
+                </div>
+                <div class="panel-form row">
+                    <form>
+                        <div class="label-group">
+                            <label for="user-password">Password</label>
+                            <input type="text" class="form-control" id="user-password">
+                        </div>
+                        <div class="label-group">
+                            <label for="password-repeat">Repeat</label>
+                            <input type="text" class="form-control" id="password-repeat">
                         </div>
                     </form>
                 </div>
@@ -187,7 +223,7 @@
                 <div class="section-title">
                     <span>Language</span>
                 </div>
-                <select class="filters-select">
+                <select class="filters-select select-language">
                     <option class="lang-en">EN</option>
                     <option class="lang-de">DE</option>
                     <option class="lang-ua">UA</option>
@@ -270,6 +306,241 @@
             <input type="text" class="form-control" placeholder="Generate link">
             <button class="btn btn-disabled"><span class="icon icon-links"></span>Copy link</button>
             <button class="btn btn-action">Save</button>
+        </form>
+    </div>
+</div>
+
+<div class="modal" id="add-banners-modal">
+    <div class="modal-header flex-container align-items-center justify-content-sb">
+        <h3 class="page-title">add url</h3>
+        <div class="close"><span class="icon icon-close"></span></div>
+    </div>
+    <div class="filters">
+        <div class="flex-container">
+            <form>
+                <div class="section-title">
+                    <span>Scheme name</span>
+                </div>
+                <div class="flex-container">
+                    <input type="text" class="form-control" placeholder="Name">
+                    <select class="filters-select width-auto">
+                        <option class="disabled">Select compain</option>
+                        <option>Please select this compain</option>
+                        <option>Compain</option>
+                        <option>Select compain</option>
+                    </select>
+                </div>
+            </form>
+            <form>
+                <div class="section-title">
+                    <span>Language</span>
+                </div>
+                <select class="filters-select select-language">
+                    <option class="lang-en">EN</option>
+                    <option class="lang-de">DE</option>
+                    <option class="lang-ua">UA</option>
+                    <option class="lang-ru">RU</option>
+                </select>
+            </form>
+        </div>
+        <div class="flex-container">
+            <form>
+                <div class="section-title">
+                    <span>Weight-Height</span>
+                </div>
+                <select class="filters-select width-auto">
+                    <option class="disabled">Select</option>
+                    <option>Please select this Weight-Height</option>
+                    <option>Weight-Height</option>
+                    <option>Select Weight-Height</option>
+                </select>
+            </form>
+            <form>
+                <div class="section-title">
+                    <span>Design</span>
+                </div>
+                <select class="filters-select width-auto">
+                    <option class="disabled">Select</option>
+                    <option>Please select this Design</option>
+                    <option>Design</option>
+                    <option>Select Design</option>
+                </select>
+            </form>
+            <form>
+                <div class="section-title">
+                    <span>File type</span>
+                </div>
+                <select class="filters-select width-auto">
+                    <option class="disabled">All</option>
+                    <option>Please select this File type</option>
+                    <option>File type</option>
+                    <option>Select File type</option>
+                </select>
+            </form>
+        </div>
+    </div>
+    <div class="modal-body">
+        <div class="flex-container">
+            <div class="checkbox-wrap">
+                <h3 class="section-title">Select banners</h3>
+                <div class="checkboxes">
+                    <div class="scrollbar-inner">
+                        <div class="checkbox-group flex-container align-items-center">
+                            <input type="checkbox" name="banner1" id="banner1">
+                            <label for="banner1">landing page</label>
+                            <span class="icon icon-show"></span>
+                        </div>
+                        <div class="checkbox-group flex-container align-items-center">
+                            <input type="checkbox" name="banner2" id="banner2">
+                            <label for="banner2">landing page</label>
+                            <span class="icon icon-show"></span>
+                        </div>
+                        <div class="checkbox-group flex-container align-items-center">
+                            <input type="checkbox" name="banner3" id="banner3">
+                            <label for="banner3">landing page</label>
+                            <span class="icon icon-show"></span>
+                        </div>
+                        <div class="checkbox-group flex-container align-items-center">
+                            <input type="checkbox" name="banner4" id="banner4">
+                            <label for="banner4">landing page</label>
+                            <span class="icon icon-show"></span>
+                        </div>
+                        <div class="checkbox-group flex-container align-items-center">
+                            <input type="checkbox" name="banner5" id="banner5">
+                            <label for="banner5">landing page</label>
+                            <span class="icon icon-show"></span>
+                        </div>
+                        <div class="checkbox-group flex-container align-items-center">
+                            <input type="checkbox" name="banner6" id="banner6">
+                            <label for="banner6">landing page</label>
+                            <span class="icon icon-show"></span>
+                        </div>
+                        <div class="checkbox-group flex-container align-items-center">
+                            <input type="checkbox" name="banner7" id="banner7">
+                            <label for="banner7">landing page</label>
+                            <span class="icon icon-show"></span>
+                        </div>
+                        <div class="checkbox-group flex-container align-items-center">
+                            <input type="checkbox" name="banner8" id="banner8">
+                            <label for="banner8">landing page</label>
+                            <span class="icon icon-show"></span>
+                        </div>
+                        <div class="checkbox-group flex-container align-items-center">
+                            <input type="checkbox" name="banner9" id="banner9">
+                            <label for="banner9">landing page</label>
+                            <span class="icon icon-show"></span>
+                        </div>
+                        <div class="checkbox-group flex-container align-items-center">
+                            <input type="checkbox" name="banner10" id="banner10">
+                            <label for="banner10">landing page</label>
+                            <span class="icon icon-show"></span>
+                        </div>
+                        <div class="checkbox-group flex-container align-items-center">
+                            <input type="checkbox" name="banner11" id="banner11">
+                            <label for="banner11">landing page</label>
+                            <span class="icon icon-show"></span>
+                        </div>
+                        <div class="checkbox-group flex-container align-items-center">
+                            <input type="checkbox" name="banner12" id="banner12">
+                            <label for="banner12">landing page</label>
+                            <span class="icon icon-show"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="checkbox-wrap">
+                <h3 class="section-title">Select websites</h3>
+                <div class="checkboxes">
+                    <div class="scrollbar-inner">
+                        <div class="checkbox-group flex-container align-items-center">
+                            <input type="checkbox" name="website1" id="website1">
+                            <label for="website1">landing page</label>
+                            <span class="icon icon-show"></span>
+                        </div>
+                        <div class="checkbox-group flex-container align-items-center">
+                            <input type="checkbox" name="website2" id="website2">
+                            <label for="website2">landing page</label>
+                            <span class="icon icon-show"></span>
+                        </div>
+                        <div class="checkbox-group flex-container align-items-center">
+                            <input type="checkbox" name="website3" id="website3">
+                            <label for="website3">landing page</label>
+                            <span class="icon icon-show"></span>
+                        </div>
+                        <div class="checkbox-group flex-container align-items-center">
+                            <input type="checkbox" name="website4" id="website4">
+                            <label for="website4">landing page</label>
+                            <span class="icon icon-show"></span>
+                        </div>
+                        <div class="checkbox-group flex-container align-items-center">
+                            <input type="checkbox" name="website5" id="website5">
+                            <label for="website5">landing page</label>
+                            <span class="icon icon-show"></span>
+                        </div>
+                        <div class="checkbox-group flex-container align-items-center">
+                            <input type="checkbox" name="website6" id="website6">
+                            <label for="website6">landing page</label>
+                            <span class="icon icon-show"></span>
+                        </div>
+                        <div class="checkbox-group flex-container align-items-center">
+                            <input type="checkbox" name="website7" id="website7">
+                            <label for="website7">landing page</label>
+                            <span class="icon icon-show"></span>
+                        </div>
+                        <div class="checkbox-group flex-container align-items-center">
+                            <input type="checkbox" name="website8" id="website8">
+                            <label for="website8">landing page</label>
+                            <span class="icon icon-show"></span>
+                        </div>
+                        <div class="checkbox-group flex-container align-items-center">
+                            <input type="checkbox" name="website9" id="website9">
+                            <label for="website9">landing page</label>
+                            <span class="icon icon-show"></span>
+                        </div>
+                        <div class="checkbox-group flex-container align-items-center">
+                            <input type="checkbox" name="website10" id="website10">
+                            <label for="website10">landing page</label>
+                            <span class="icon icon-show"></span>
+                        </div>
+                        <div class="checkbox-group flex-container align-items-center">
+                            <input type="checkbox" name="website11" id="website11">
+                            <label for="website11">landing page</label>
+                            <span class="icon icon-show"></span>
+                        </div>
+                        <div class="checkbox-group flex-container align-items-center">
+                            <input type="checkbox" name="website12" id="website12">
+                            <label for="website12">landing page</label>
+                            <span class="icon icon-show"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <form class="flex-container align-items-center generate-link-form">
+            <input type="text" class="form-control" placeholder="Generate link">
+            <button class="btn btn-disabled"><span class="icon icon-links"></span>Copy link</button>
+            <button class="btn btn-action">Save</button>
+        </form>
+    </div>
+</div>
+
+<div class="modal" id="login-modal">
+    <div class="modal-header">
+        <h3 class="page-title">login</h3>
+    </div>
+    <div class="modal-body">
+        <form class="flex-container">
+            <div class="form-control flex-container">
+                <span class="icon icon-login"></span>
+                <input type="text" placeholder="login name">
+            </div>
+            <div class="form-control flex-container">
+                <span class="icon icon-password"></span>
+                <input type="text" placeholder="password">
+            </div>
+            <button class="btn btn-action">Enter</button>
         </form>
     </div>
 </div>

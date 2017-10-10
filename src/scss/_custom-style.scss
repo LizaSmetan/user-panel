@@ -123,3 +123,58 @@ main{
   }
 }
 
+//madals
+
+#add-links-modal{
+  width: 1075px;
+  .checkbox-group{
+    width: 30%;
+  }
+}
+
+#add-banners-modal{
+  width: 1075px;
+  .filters{
+    .flex-container{
+      &:first-child{
+        margin-bottom: 35px;
+      }
+      &:last-child{
+        form{
+          width: 33.3333%;
+          .jq-selectbox{
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  .checkbox-wrap{
+    width: 50%;
+    padding-left: $defaultIndent;
+    padding-right: $defaultIndent;
+    & + .checkbox-wrap{
+      border-left: $defaultBorder;
+    }
+  }
+}
+
+#login-modal{
+  .modal-body{
+    padding: 48px;
+    form{
+      .form-control {
+        margin-right: $defaultIndent;
+        input{
+          margin-left: 10px;
+          width: 100%;
+        }
+      }
+      .btn{
+        padding: 10px 62px;
+      }
+    }
+  }
+}
+
+
