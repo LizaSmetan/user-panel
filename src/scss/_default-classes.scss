@@ -8,6 +8,9 @@
 .text-left{
     text-align: left;
 }
+.red-text{
+    color: $red;
+}
 //class position fixed
 .fixed-to-top{
     position: fixed;
@@ -29,6 +32,9 @@
 
 // columns
 
+.third-width-col{
+    width: 33.3333%;
+}
 .half-width-col{
     width: 50%;
 }

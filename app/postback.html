@@ -46,7 +46,7 @@
                 <a href=""><span class="icon icon-profile"></span>Leonardo Dicaprio</a>
             </div>
             <div class="user-info">
-                <a href="" data-modal="#login-modal"><span class="icon icon-quit"></span></a>
+                <a href="" data-modal="#quit-modal"><span class="icon icon-quit"></span></a>
             </div>
         </div>
     </div>
@@ -119,7 +119,7 @@
                     <img src="img/manager.png" alt="">
                     <div class="status offline online"></div>
                 </div>
-                <a href="" class="link">Michael E.</a>
+                <a href="" class="link" data-modal="#chat-modal">Michael E.</a>
             </div>
         </div>
     </div>
@@ -127,26 +127,147 @@
 <!-- aside end-->
 <main>
     <div class="content-wrapper">
-        <div class="panel">
+        <div class="panel panel-postback">
             <div class="panel-header">
                 <h3 class="page-title">New postback</h3>
             </div>
             <div class="panel-body">
                 <p>You can insert some parameters in this postback:</p>
-                <div class="flex-container">
-                    <form class="half-width-col">
-                        <div class="section-title">
-                            <span>Signup</span>
+                <form>
+                    <div class="flex-container">
+                        <div class="half-width-col">
+                            <div class="section-title">
+                                <span>Signup</span>
+                            </div>
+                            <textarea class="form-control text-input" rows="10" placeholder="crm_userId =%user_id%
+subid =%p%"></textarea>
                         </div>
-                        <textarea class="form-control text-input full-width" rows="10" placeholder="text input"></textarea>
-                    </form>
-                    <form class="half-width-col">
-                        <div class="section-title">
-                            <span>Signup</span>
+                        <div class="half-width-col">
+                            <div class="section-title">
+                                <span>Signup</span>
+                            </div>
+                            <textarea class="form-control text-input" rows="10" placeholder="crm_userId =%user_id%
+subid =%p%"></textarea>
                         </div>
-                        <textarea class="form-control text-input full-width" rows="10" placeholder="text input"></textarea>
-                    </form>
-                </div>
+                    </div>
+                    <div class="flex-container">
+                        <div class="third-width-col">
+                            <div class="section-title">
+                                <span>Postback type</span>
+                            </div>
+                            <select class="filters-select width-auto">
+                                <option class="disabled">S2S (http://..)</option>
+                                <option>Please select this option</option>
+                                <option>S2S (http://..)</option>
+                                <option>Select option</option>
+                            </select>
+                        </div>
+                        <div class="third-width-col">
+                            <div class="section-title">
+                                <span>To countries</span>
+                            </div>
+                            <select class="filters-select width-auto">
+                                <option class="disabled">Select countries</option>
+                                <option>Please select this countries</option>
+                                <option>Countries</option>
+                                <option>Select countries</option>
+                            </select>
+                        </div>
+                        <div class="third-width-col">
+                            <div class="section-title">
+                                <span>Sending options:</span>
+                            </div>
+                            <select class="filters-select width-auto">
+                                <option class="disabled">Select</option>
+                                <option>Please select this options</option>
+                                <option>Options</option>
+                                <option>Select options</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="flex-container postback-form-wrap row">
+                        <div class="half-width-col">
+                            <div class="checkbox-wrap">
+                                <h3 class="section-title"><span class="red-text">NOT </span>send statuses</h3>
+                                <div class="checkboxes">
+                                    <div class="scrollbar-inner">
+                                        <div class="checkbox-group flex-container align-items-center">
+                                            <input type="checkbox" name="status1" id="status1">
+                                            <label for="status1">checkNumber</label>
+                                            <span class="icon icon-show"></span>
+                                        </div>
+                                        <div class="checkbox-group flex-container align-items-center">
+                                            <input type="checkbox" name="status2" id="status2">
+                                            <label for="status2">noAnswer</label>
+                                            <span class="icon icon-show"></span>
+                                        </div>
+                                        <div class="checkbox-group flex-container align-items-center">
+                                            <input type="checkbox" name="status3" id="status3">
+                                            <label for="status3">noCall</label>
+                                            <span class="icon icon-show"></span>
+                                        </div>
+                                        <div class="checkbox-group flex-container align-items-center">
+                                            <input type="checkbox" name="status4" id="status4">
+                                            <label for="status4">callAgain</label>
+                                            <span class="icon icon-show"></span>
+                                        </div>
+                                        <div class="checkbox-group flex-container align-items-center">
+                                            <input type="checkbox" name="status5" id="status5">
+                                            <label for="status5">callAgain</label>
+                                            <span class="icon icon-show"></span>
+                                        </div>
+                                        <div class="checkbox-group flex-container align-items-center">
+                                            <input type="checkbox" name="status6" id="status6">
+                                            <label for="status6">callAgain</label>
+                                            <span class="icon icon-show"></span>
+                                        </div>
+                                        <div class="checkbox-group flex-container align-items-center">
+                                            <input type="checkbox" name="status7" id="status7">
+                                            <label for="status7">callAgain</label>
+                                            <span class="icon icon-show"></span>
+                                        </div>
+                                        <div class="checkbox-group flex-container align-items-center">
+                                            <input type="checkbox" name="status8" id="status8">
+                                            <label for="status8">callAgain</label>
+                                            <span class="icon icon-show"></span>
+                                        </div>
+                                        <div class="checkbox-group flex-container align-items-center">
+                                            <input type="checkbox" name="status9" id="status9">
+                                            <label for="status9">callAgain</label>
+                                            <span class="icon icon-show"></span>
+                                        </div>
+                                        <div class="checkbox-group flex-container align-items-center">
+                                            <input type="checkbox" name="status10" id="status10">
+                                            <label for="status10">callAgain</label>
+                                            <span class="icon icon-show"></span>
+                                        </div>
+                                        <div class="checkbox-group flex-container align-items-center">
+                                            <input type="checkbox" name="status11" id="status11">
+                                            <label for="status11">callAgain</label>
+                                            <span class="icon icon-show"></span>
+                                        </div>
+                                        <div class="checkbox-group flex-container align-items-center">
+                                            <input type="checkbox" name="status12" id="status12">
+                                            <label for="status12">callAgain</label>
+                                            <span class="icon icon-show"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="half-width-col">
+                            <h3 class="section-title">Send after:</h3>
+                            <div class="slider-wrap">
+                                <div id="slider">
+                                    <div id="custom-handle" class="ui-slider-handle"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-row">
+                        <button class="btn btn-action">Create Pixel</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -165,7 +286,7 @@
                     <span>Scheme name</span>
                 </div>
                 <div class="flex-container">
-                    <input type="text" class="form-control" placeholder="Name">
+                    <input type="text" class="form-control text-input" placeholder="Name">
                     <select class="filters-select width-auto">
                         <option class="disabled">Select compain</option>
                         <option>Please select this compain</option>
@@ -481,22 +602,85 @@
     </div>
 </div>
 
-<div class="modal" id="login-modal">
+<div class="modal login-modal" id="login-modal">
     <div class="modal-header">
         <h3 class="page-title">login</h3>
     </div>
     <div class="modal-body">
         <form class="flex-container">
-            <div class="form-control flex-container">
-                <span class="icon icon-login"></span>
-                <input type="text" placeholder="login name">
+            <div class="form-control text-input flex-container">
+                <label for="login-input" class="icon icon-login"></label>
+                <input type="text" placeholder="login name" id="login-input">
             </div>
-            <div class="form-control flex-container">
-                <span class="icon icon-password"></span>
-                <input type="text" placeholder="password">
+            <div class="form-control text-input flex-container">
+                <label for="password-input" class="icon icon-password"></label>
+                <input type="password" placeholder="password" id="password-input">
+            </div>
+            <button data-modal="#login-wrong-modal" class="btn btn-action">Enter</button>
+        </form>
+    </div>
+</div>
+
+<div class="modal login-modal" id="login-wrong-modal">
+    <div class="modal-header">
+        <h3 class="page-title">login</h3>
+    </div>
+    <div class="modal-body">
+        <form class="flex-container">
+            <div class="form-control text-input flex-container">
+                <label for="login-wrong-input" class="icon icon-login"></label>
+                <input type="text" placeholder="login name" id="login-wrong-input">
+            </div>
+            <div>
+                <div class="form-control flex-container invalid">
+                    <label for="password-wrong-input" class="icon icon-password"></label>
+                    <input type="password" placeholder="password" id="password-wrong-input">
+                </div>
+                <span class="red-text">Password is wrong.</span>
+                <a href="" class="link">Did you forget it?</a>
             </div>
             <button class="btn btn-action">Enter</button>
         </form>
+    </div>
+</div>
+
+<div class="modal" id="quit-modal">
+    <div class="modal-header">
+        <div class="section-title">
+            <span>Do you really want to Quit?</span>
+        </div>
+    </div>
+    <div class="modal-body">
+        <div class="btn-row">
+            <a class="btn btn-default close">Cancel</a>
+            <a class="btn btn-action" data-modal="#login-modal">Quit</a>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="chat-modal">
+    <div class="modal-header flex-container align-items-center justify-content-sb">
+        <h3 class="page-title">Online chat with your personal manager</h3>
+        <div class="close"><span class="icon icon-close"></span></div>
+    </div>
+    <div class="modal-body">
+        <div class="manager-modal flex-container row">
+            <div class="manager-modal-img">
+                <img src="img/manager.png">
+            </div>
+            <div class="manager-modal-info">
+                <h2>Michael E.</h2>
+                <span>online</span>
+            </div>
+        </div>
+        <div class="chat-wrap"></div>
+    </div>
+    <div class="modal-footer flex-container">
+        <div class="form-control text-input">
+            <label for="message-input" class="icon icon-message"></label>
+            <input type="text" placeholder="Enter the message.." id="message-input">
+        </div>
+        <button class="btn btn-action">Send</button>
     </div>
 </div>
 

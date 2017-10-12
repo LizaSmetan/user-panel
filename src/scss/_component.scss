@@ -409,6 +409,7 @@
   position: relative;
   cursor: pointer;
 }
+
   //aside
 
 .aside {
@@ -557,6 +558,9 @@
   .modal-header{
     padding: $defaultIndent;
     border-bottom: $defaultBorder;
+    .close{
+      cursor: pointer;
+    }
   }
   .filters{
     padding: 25px $defaultIndent;
@@ -565,6 +569,9 @@
       margin-bottom: 15px;
     }
     form{
+      textarea{
+        resize: none;
+      }
       &:first-child{
         flex-grow: 1;
         input{
@@ -717,7 +724,7 @@ input{
         width: 11px;
         height: 7px;
         background: url("../img/arrow-down.svg") no-repeat;
-        top: 16px;
+        top: 18px;
         right: 17px;
       }
     }
@@ -802,6 +809,9 @@ input{
     border-bottom: 22px solid $orange;
     border-top: none;
     transform: translateX(-6px);
+    &.ui-state-default{
+      background: none;
+    }
     &:focus, &:hover {
       outline: none;
       background: none;

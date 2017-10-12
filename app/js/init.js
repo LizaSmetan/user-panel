@@ -97,7 +97,7 @@ $( function() {
         var target = $(this).attr('data-modal');
 
         $(target).bPopup({
-            closeClass:'close-modal'
+            closeClass:'close'
         });
     });
 

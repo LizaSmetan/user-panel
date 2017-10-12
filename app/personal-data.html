@@ -46,7 +46,7 @@
                 <a href=""><span class="icon icon-profile"></span>Leonardo Dicaprio</a>
             </div>
             <div class="user-info">
-                <a href="" data-modal="#login-modal"><span class="icon icon-quit"></span></a>
+                <a href="" data-modal="#quit-modal"><span class="icon icon-quit"></span></a>
             </div>
         </div>
     </div>
@@ -119,7 +119,7 @@
                     <img src="img/manager.png" alt="">
                     <div class="status offline online"></div>
                 </div>
-                <a href="" class="link">Michael E.</a>
+                <a href="" class="link" data-modal="#chat-modal">Michael E.</a>
             </div>
         </div>
     </div>
@@ -163,7 +163,7 @@
                             <input type="text" class="form-control" id="user-icq">
                         </div>
                         <div class="label-group">
-                            <label for="user-email">Msn</label>
+                            <label for="user-msn">Msn</label>
                             <input type="text" class="form-control" id="user-msn">
                         </div>
                     </form>
@@ -180,11 +180,11 @@
                     <form>
                         <div class="label-group">
                             <label for="user-password">Password</label>
-                            <input type="text" class="form-control" id="user-password">
+                            <input type="password" class="form-control" id="user-password">
                         </div>
                         <div class="label-group">
                             <label for="password-repeat">Repeat</label>
-                            <input type="text" class="form-control" id="password-repeat">
+                            <input type="password" class="form-control" id="password-repeat">
                         </div>
                     </form>
                 </div>
@@ -210,7 +210,7 @@
                     <span>Scheme name</span>
                 </div>
                 <div class="flex-container">
-                    <input type="text" class="form-control" placeholder="Name">
+                    <input type="text" class="form-control text-input" placeholder="Name">
                     <select class="filters-select width-auto">
                         <option class="disabled">Select compain</option>
                         <option>Please select this compain</option>
@@ -526,22 +526,85 @@
     </div>
 </div>
 
-<div class="modal" id="login-modal">
+<div class="modal login-modal" id="login-modal">
     <div class="modal-header">
         <h3 class="page-title">login</h3>
     </div>
     <div class="modal-body">
         <form class="flex-container">
-            <div class="form-control flex-container">
-                <span class="icon icon-login"></span>
-                <input type="text" placeholder="login name">
+            <div class="form-control text-input flex-container">
+                <label for="login-input" class="icon icon-login"></label>
+                <input type="text" placeholder="login name" id="login-input">
             </div>
-            <div class="form-control flex-container">
-                <span class="icon icon-password"></span>
-                <input type="text" placeholder="password">
+            <div class="form-control text-input flex-container">
+                <label for="password-input" class="icon icon-password"></label>
+                <input type="password" placeholder="password" id="password-input">
+            </div>
+            <button data-modal="#login-wrong-modal" class="btn btn-action">Enter</button>
+        </form>
+    </div>
+</div>
+
+<div class="modal login-modal" id="login-wrong-modal">
+    <div class="modal-header">
+        <h3 class="page-title">login</h3>
+    </div>
+    <div class="modal-body">
+        <form class="flex-container">
+            <div class="form-control text-input flex-container">
+                <label for="login-wrong-input" class="icon icon-login"></label>
+                <input type="text" placeholder="login name" id="login-wrong-input">
+            </div>
+            <div>
+                <div class="form-control flex-container invalid">
+                    <label for="password-wrong-input" class="icon icon-password"></label>
+                    <input type="password" placeholder="password" id="password-wrong-input">
+                </div>
+                <span class="red-text">Password is wrong.</span>
+                <a href="" class="link">Did you forget it?</a>
             </div>
             <button class="btn btn-action">Enter</button>
         </form>
+    </div>
+</div>
+
+<div class="modal" id="quit-modal">
+    <div class="modal-header">
+        <div class="section-title">
+            <span>Do you really want to Quit?</span>
+        </div>
+    </div>
+    <div class="modal-body">
+        <div class="btn-row">
+            <a class="btn btn-default close">Cancel</a>
+            <a class="btn btn-action" data-modal="#login-modal">Quit</a>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="chat-modal">
+    <div class="modal-header flex-container align-items-center justify-content-sb">
+        <h3 class="page-title">Online chat with your personal manager</h3>
+        <div class="close"><span class="icon icon-close"></span></div>
+    </div>
+    <div class="modal-body">
+        <div class="manager-modal flex-container row">
+            <div class="manager-modal-img">
+                <img src="img/manager.png">
+            </div>
+            <div class="manager-modal-info">
+                <h2>Michael E.</h2>
+                <span>online</span>
+            </div>
+        </div>
+        <div class="chat-wrap"></div>
+    </div>
+    <div class="modal-footer flex-container">
+        <div class="form-control text-input">
+            <label for="message-input" class="icon icon-message"></label>
+            <input type="text" placeholder="Enter the message.." id="message-input">
+        </div>
+        <button class="btn btn-action">Send</button>
     </div>
 </div>
 

@@ -123,7 +123,72 @@ main{
   }
 }
 
-//madals
+.panel-details{
+  table{
+    thead{
+      tr{
+        th{
+          padding: 30px 10px;
+        }
+      }
+    }
+  }
+}
+
+.panel-postback{
+  .panel-body{
+    p{
+      margin-top: 33px;
+    }
+    form{
+      .btn-row{
+        text-align: end;
+        padding: $defaultIndent;
+      }
+      .checkbox-wrap{
+        padding: 0;
+        .checkboxes{
+          padding: 0;
+        }
+      }
+      .section-title{
+        padding: 22px 0;
+      }
+      .half-width-col{
+        textarea{
+          width: 100%;
+          height: 187px;
+        }
+        & + .half-width-col{
+          margin-left: $defaultIndent;
+        }
+      }
+      .third-width-col{
+        .jq-selectbox{
+          width: 100%;
+        }
+        & + .third-width-col{
+          margin-left: $defaultIndent;
+        }
+      }
+      .postback-form-wrap{
+        padding: 23px;
+        border-bottom: $defaultBorder;
+        border-top: $defaultBorder;
+        margin-top: 40px;
+        .half-width-col{
+          & + .half-width-col{
+            margin-left: 40px;
+          }
+        }
+        .slider-wrap{
+          padding: 34px 0 70px;
+        }
+      }
+    }
+  }
+}
+//modals
 
 #add-links-modal{
   width: 1075px;
@@ -159,7 +224,7 @@ main{
   }
 }
 
-#login-modal{
+.login-modal{
   .modal-body{
     padding: 48px;
     form{
@@ -168,10 +233,89 @@ main{
         input{
           margin-left: 10px;
           width: 100%;
+          height: 15px;
         }
       }
       .btn{
         padding: 10px 62px;
+      }
+    }
+  }
+}
+
+#login-wrong-modal{
+  .modal-body{
+    padding-bottom: 29px;
+  }
+  .form-control{
+    height: 45px;
+    color: $black;
+    &.text-input{
+      border-color: $black;
+    }
+  }
+  .red-text{
+    display: block;
+    margin: 14px 0 7px;
+  }
+  .btn{
+    height: 45px;
+  }
+}
+
+#quit-modal{
+  width: 359px;
+  .btn-row{
+    text-align: end;
+    padding: 22px;
+    a{
+      cursor: pointer;
+    }
+  }
+}
+
+#chat-modal{
+  width: 1074px;
+  .manager-modal{
+    padding: 10px $defaultIndent;
+    border-bottom: $defaultBorder;
+    .manager-modal-img{
+      margin-right: $defaultIndent;
+      img{
+        width: 70px;
+        height: 70px;
+      }
+    }
+    .manager-modal-info{
+      padding: 10px 0;
+      h2{
+        font-size: 30px;
+        margin-bottom: 5px;
+      }
+      span{
+        display: inline-block;
+        color: $white;
+        padding: 3px 6px;
+        font-size: 12px;
+        background-color: $green;
+        border-radius: 2px;
+      }
+    }
+  }
+  .chat-wrap{
+    height: 319px;
+  }
+  .modal-footer{
+    .form-control{
+      flex-grow: 1;
+      margin-right: $defaultIndent;
+      input{
+        width: 95%;
+      }
+      label{
+        font-size: 16px;
+        margin-right: 12px;
+        vertical-align: middle;
       }
     }
   }
