@@ -29,7 +29,9 @@
 .justify-content-sb{
     justify-content: space-between;
 }
-
+.flex-wrap{
+    flex-wrap: wrap;
+}
 // columns
 
 .third-width-col{
@@ -47,4 +49,8 @@
 .content-wrapper{
     padding: $defaultIndent;
     height: calc(100vh - 60px);
+}
+
+.scroll-x-wrap{
+    overflow-x: scroll;
 }

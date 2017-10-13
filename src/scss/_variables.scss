@@ -86,6 +86,7 @@ $negativeNotificationBgHover: #de5252;
 
 $asideBg: #191919;
 $asideWidth: 188px;
+$asideWidthMini: 160px;
 
 //sidebar
 
@@ -94,3 +95,12 @@ $sidebarMobileWidth: 60px;
 //default border
 
 $defaultBorder: 1px solid $lightGrey;
+
+//media
+
+$mobBrP-size: 1280px;
+$lg-size: 1199px;
+$md-size: 991px;
+$sm-size: 767px;
+$xs-size: 599px;
+$mini-size: 479px;

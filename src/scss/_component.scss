@@ -124,6 +124,7 @@
 .table {
   border-collapse: collapse;
   font-size: $tableFontSize;
+  white-space: nowrap;
   tbody {
     tr {
       &:last-child{
@@ -143,9 +144,15 @@
     border-radius: 2px;
     cursor: pointer;
     display: inline-block;
+    @media (max-width: $lg-size) {
+      padding: 8px 6px;
+    }
     .icon{
       margin-left: 10px;
       opacity: 0;
+      @media (max-width: $lg-size) {
+        display: none;
+      }
       &:before{
         position: relative;
         bottom: 3px;
@@ -167,6 +174,12 @@
     td {
       border-top: $defaultBorder;
       padding: 18px;
+      @media (max-width: $lg-size){
+        padding: 16px;
+        @media (max-width: $xs-size){
+          padding: 10px;
+        }
+      }
       &.td-title {
         color: $grey;
         font-size: 16px;
@@ -184,6 +197,12 @@
 
 .pagination{
   padding: 25px;
+  @media (max-width: $xs-size){
+    padding: 20px;
+  }
+  @media(max-width: $mini-size){
+    padding: 12px;
+  }
   li{
     display: inline-block;
     &.active{
@@ -194,6 +213,15 @@
     a{
       display: inline-block;
       padding: $defaultIndent;
+      @media (max-width: $lg-size){
+        padding: 14px;
+      }
+      @media (max-width: $sm-size){
+        padding: 12px;
+      }
+      @media (max-width: $xs-size){
+        padding: 7px;
+      }
       &:hover{
         @extend %activePaginationLink;
       }
@@ -274,6 +302,12 @@
   border-radius: 3px;
   display: inline-block;
   vertical-align: middle;
+  @media (max-width: $xs-size){
+    margin-right: $defaultIndent;
+  }
+  @media(max-width: $mini-size){
+    margin-bottom: 10px;
+  }
   .date-control{
     padding: 11px 16px;
     font-family: $fontFamily;
@@ -284,6 +318,11 @@
     border-left: $defaultBorder;
     background: url("../img/calendar.svg") no-repeat 90%;
     background-size: 13px 13px;
+    @media (max-width: $xs-size){
+      display: block;
+      border-left: none;
+      border-top: $defaultBorder;
+    }
   }
 }
   //notifications
@@ -330,18 +369,47 @@
   border-bottom: $defaultBorder;
   right: 0;
   left: 0;
+  @media(max-width: $mobBrP-size){
+    padding-left: 650px;
+  }
+  @media(max-width: $lg-size){
+    padding-left: 450px;
+  }
+  @media(max-width: $md-size){
+    padding-left: 270px;
+  }
+  @media (max-width: $sm-size) {
+    padding-left: 125px;
+  }
+  @media (max-width: $xs-size) {
+    padding-left: 65px;
+  }
+  @media(max-width: $mini-size){
+    padding-left: 60px;
+  }
   .container-fluid {
     padding: 0;
   }
   .user-info {
     padding: $defaultIndent;
     border-left: $defaultBorder;
+    @media (max-width: $xs-size){
+      padding: 10px;
+    }
     &.user-wallet {
       color: $darkGrey;
       font-size: 20px;
       font-weight: $fontRegular;
       span{
         margin: 0 20px;
+        @media(max-width: $mini-size){
+          display: none;
+        }
+      }
+      .icon-arrow-down{
+        @media(max-width: $mini-size){
+          margin-left: 10px;
+        }
       }
     }
     &.user-notifications{
@@ -366,6 +434,12 @@
         &::before{
           vertical-align: middle;
         }
+        @media(max-width: $mini-size){
+          display: none;
+        }
+      }
+      @media(max-width: $mini-size){
+        line-height: 21px;
       }
     }
     .icon {
@@ -395,6 +469,9 @@
     li{
       font-weight: $fontLight;
       padding: $defaultIndent;
+      @media (max-width: $xs-size){
+        padding: 12px;
+      }
       &:hover{
         color: $orange;
       }
@@ -419,6 +496,9 @@
   left: 0;
   z-index: 100;
   overflow-y: auto;
+  @media(max-width: $lg-size){
+    width: $asideWidthMini;
+  }
   .menu-control {
     padding: $defaultIndent;
     .menu-btn {
@@ -498,6 +578,23 @@
     .panel-body{
       padding: 25px $defaultIndent;
     }
+    .table{
+      .td-title{
+        @media(max-width: $mini-size) {
+          display: none;
+        }
+      }
+      td{
+        @media(max-width: $mini-size){
+          padding: 10px;
+        }
+      }
+      .link{
+        @media(max-width: $mini-size){
+          font-size: 12px;
+        }
+      }
+    }
   }
   .panel-header{
     border-bottom: $defaultBorder;
@@ -513,10 +610,19 @@
     form{
       width: 455px;
       display: inline-block;
+      @media (max-width: $md-size){
+        width: 320px;
+      }
+      @media(max-width: $mini-size){
+        width: 197px;
+      }
       .label-group{
         label{
           font-weight: $fontBold;
           color: $darkGrey;
+          @media (max-width: $xs-size){
+            margin-bottom: 10px;
+          }
         }
         & + .label-group{
           margin-top: 15px;
@@ -524,6 +630,9 @@
       }
       .form-control{
         width: 310px;
+        @media (max-width: $xs-size){
+          width: 100%;
+          }
         }
       }
     }
@@ -542,12 +651,17 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media (max-width: $xs-size){
+    flex-wrap: wrap;
+  }
 }
 
 //chart
 
 .chart-wrap{
   padding-bottom: 30px;
+  width: 670px;
+  height: 260px;
 }
 
 //modals
@@ -568,6 +682,11 @@
     .section-title{
       margin-bottom: 15px;
     }
+    .flex-container{
+      @media (max-width: $sm-size){
+        flex-wrap: wrap;
+      }
+    }
     form{
       textarea{
         resize: none;
@@ -577,6 +696,11 @@
         input{
           width: 50%;
           margin-right: 20px;
+          @media (max-width: $xs-size){
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: $defaultIndent;
+          }
         }
         .jq-selectbox{
           flex-grow: 1;
@@ -604,6 +728,9 @@
             padding-left: 57px;
           }
           width: 132px;
+          @media (max-width: $sm-size){
+            width: 100%;
+          }
           li{
             padding-left: 57px;
           }
@@ -611,6 +738,13 @@
       }
       & + form{
         margin-left: $defaultIndent;
+        @media (max-width: $sm-size){
+          margin-left: 0;
+          margin-top: $defaultIndent;
+        }
+      }
+      @media (max-width: $sm-size){
+        width: 100%;
       }
     }
   }
@@ -622,14 +756,34 @@
     padding: $defaultIndent;
     border-top: $defaultBorder;
     .generate-link-form{
+      @media (max-width: $xs-size){
+        flex-wrap: wrap;
+      }
       input{
         margin-right: 16px;
+        @media (max-width: $xs-size){
+          width: 100%;
+          margin-right: 0;
+          margin-bottom: $defaultIndent;
+        }
       }
       .btn{
         line-height: 1em;
         &.btn-disabled{
           span{
             margin-right: 15px;
+          }
+        }
+        @media (max-width: $xs-size){
+          width: 47%;
+        }
+        @media(max-width: $mini-size){
+          width: 100%;
+        }
+        &.btn-action{
+          @media(max-width: $mini-size){
+            margin-left: 0;
+            margin-top: 10px;
           }
         }
       }
@@ -707,7 +861,7 @@ input{
   }
   .jq-selectbox__select{
     height: auto;
-    padding: 12px 15px;
+    padding: 14px 15px;
     color: $inputColor;
     border: 1px solid $inputBorderDefault;
     border-radius: 2px;
@@ -739,7 +893,7 @@ input{
     }
     .jq-selectbox__select{
       height: auto;
-      padding: 12px 15px;
+      padding: 14px 15px;
       border: 1px solid $inputBorderDefault;
       border-radius: 2px;
       background: none;
@@ -765,7 +919,7 @@ input{
       }
       li{
         font-weight: $fontLight;
-        padding: 12px 15px;
+        padding: 14px 15px;
         line-height: 1em;
         & + li{
           border-top: $defaultBorder;

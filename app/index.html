@@ -142,7 +142,7 @@
             </div>
             <div class="panel-body">
                 <div class="container container-sm">
-                    <div class="flex-container justify-content-sb">
+                    <div class="flex-container justify-content-sb flex-wrap">
                         <table class="table">
                             <tr>
                                 <td class="text-bold td-title">Visit Signups</td>
@@ -179,8 +179,10 @@
                             <span>Earned</span>
                         </div>
                     </div>
-                    <div class="chart-wrap">
-                        <canvas id="myChart" width="660" height="250"></canvas>
+                    <div class="scroll-x-wrap scrollbar-inner">
+                        <div class="chart-wrap">
+                            <canvas id="myChart" width="660" height="250"></canvas>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -194,7 +196,8 @@
                     <a href="" class="btn btn-action" data-modal="#add-links-modal">+ add new</a>
                 </div>
                 <div class="container-sm">
-                    <table class="table full-width">
+                    <div class="scroll-x-wrap scrollbar-inner">
+                        <table class="table full-width">
                         <tr>
                             <td class="text-bold td-title">Home page</td>
                             <td><a href="" class="link large-link">http://www.homepage.com</a></td>
@@ -236,6 +239,8 @@
                             <td><a href="" class="link large-link">http://www.twitter.com</a></td>
                         </tr>
                     </table>
+                    </div>
+
                 </div>
                 <div class="btn-row text-center">
                     <a href="" class="btn btn-action" data-modal="#add-links-modal">+ add new</a>
