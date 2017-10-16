@@ -1,4 +1,4 @@
-﻿Web Store
+﻿Just do it. Dashboard
 =====================
 
 ### Файлы папки app
