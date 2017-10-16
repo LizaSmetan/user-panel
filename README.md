@@ -1,173 +1,420 @@
-Basic gulp-scss template
+﻿Web Store
 =====================
 
-### Возможности
-1. Компиляция из scss в css
-2. Минификация css
-3. Добавление вендорных префиксов в css
-4. Автоматическое обновление браузера
-5. Минификация и конкатенация JavaScript
-6. Оптимизация картинок
-7. Создание спрайтов
+### Файлы папки app
 
+Название файла     | Содержание файла
+-------------------|----------------------
+index.html         | Страница "General statistic"
+details.html       | Страница "Details statistic"
+payout.html        | Страница "Payout history"
+personal-data.html | Страница "Personal data"
+postback.html      | Страница "Create postback"
+guide.html         | Страница со стандартными элементами
 
-**Процесс установки.**
+**Файлы папки app/css**
 
-1. Клонируем репозиторий
-```js
-git clone https://github.com/dmgame/template.git
-```
-2. Перейдите в склонированную папку или откройте е в редакторе кода
-```js
-cd template
-```
+Название файла                    | Содержание файла
+----------------------------------|----------------------------------
+css/font-awesome.css              | Иконки Font-awesome
+css/myfont.css                    | Сконвертированные иконки
+css/style.css                     | Основные стили
 
-3. Разворачивание проекта (установка всех модулей). У вас должен быть установлен nodejs и gulp глобально
-```js
- npm up
-```
----
-**Запуск gulp**
+**Файлы папки app/js**
 
-1. Запуск gulp. Запустится таск default
-```js
- gulp
-```
----
-***Установка gulp глобально `(если он не установлен)`***
-1. Установите nodejs по ссылке [Nodejs](https://nodejs.org/uk/)
-
-2. Установите gulp глобально
-```js
-npm i gulp -g
-```
----
-***Привяжите к своему репозиторию***
-1. Создайте новый репозиторий на github
-
-2. Подвяжите текущий template к своему репозиторию
-```js
-git remote set-url origin "ссылка на ваш репозиторий"
-```
----
-
-
-**Структура папок**
-
-Название папок  | Содержание файла
-----------------|----------------------
-app             | Директория с готовым проектом
-app/css         | Готовые стили к продакшену
-app/js          | Готовый js к продакшену
-app/img         | Готовые картинки к продакшену
-app/fonts       | Шрифты
-src             | Директория с исходными файлыми
-src/css         | Исходные стили, здесь мы пишем наши стили и они будут конвертироваться в app/css
-src/img         | Исходные картинки, они будут минифицироваться и перегоняться в app/img
-src/js          | Исходный js будет минифицироваться и переносится в app/js
-src/sprite      | Папка для нарезанных картинок под будущие спрайты, после конветрации попадут в app/img
+Название файла               | Содержание файла
+-----------------------------|-----------------------------
+js/bootstrap.min.js          | Подключенные плагины Bootstrap 3
+js/jquery.scrollbar.js       | Плагин для силизации скролла
+js/jquery.formstyler.min.js  | Плагины формы количества товара JQuery
+js/jquery.bpopup.min.js      | Плагин для запуска модальных окон
+js/plugins.min.js            | Основные плагины
+js/init.js                   | Основные плагины
 
 ---
-**Используемые по модули**
+**Файлы scss**
 
-```js
-var gulp         = require('gulp'), // Подключаем Gulp
-    browserSync  = require('browser-sync'), // Подключаем Browser Sync
-    concat       = require('gulp-concat'), // Подключаем gulp-concat (для конкатенации файлов)
-    uglify       = require('gulp-uglifyjs'), // Подключаем gulp-uglifyjs (для сжатия JS)
-    cssnano      = require('gulp-cssnano'), // Подключаем пакет для минификации CSS
-    rename       = require('gulp-rename'), // Подключаем библиотеку для переименования файлов
-    imagemin     = require('gulp-imagemin'), // Подключаем библиотеку для работы с изображениями
-    pngquant     = require('imagemin-pngquant'), // Подключаем библиотеку для работы с png
-    cache        = require('gulp-cache'), // Подключаем библиотеку кеширования
-    autoprefixer = require('gulp-autoprefixer'),// Подключаем библиотеку для автоматического добавления префиксов
-    spritesmith = require('gulp.spritesmith'), // Подключение библиотеки для создания спрайтов
-    merge = require('merge-stream');
+1.Component.scss
+2.Custom-style.scss
+3.Default-classes.scss
+4.Fonts.scss
+5.Jquery.formstyler.scss
+6.Jquery.formstyler.theme.scss
+7.Jquery.scrollbar.scss
+8.Reset.scss
+9.Variables.scss
+
+---
+
+***Внешние плагины***
+    [JQuery-ui](https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css)
+
+---
+
+**Переменные**
+
+```css
+
+// Font var
+
+$fontFamily: 'Roboto', sans-serif;
+$fontLight: 300;
+$fontRegular: 400;
+$fontMedium: 500;
+$fontBold: 700;
+$lineHeight: 1;
+$fontSize: 14px;
+
+// Color var
+$black: #333;
+$darkGrey: #979797;
+$grey: #bababa;
+$lightGrey: #e3e3e3;
+$xsLightGrey: #f5f5f2;
+
+$orange: #f58220;
+$orangeLight: #ffa200;
+$green: #04ae00;
+$lightGreen: #74b67a;
+$xsLlightGreen: #96cc9b;
+
+$red: #ff0000;
+$pink: #de5252;
+$lightPink: #ec7171;
+$blue: #56819f;
+$white: #fff;
+
+// default padding
+
+$defaultIndent: 18px;
+
+//component var
+
+//link component
+$linkColor: #56819f;
+$linkColorLight: #ffa200;
+$linkFontSizeDefault: 13px;
+$linkLargeFont: 16px;
+$linkHoverColor: #ffa200;
+
+
+//title component
+$titleColor: #a6a6a6;
+$titleFontSize: 16px;
+$smallTitleFontSize: 14px;
+
+// btn component
+$btnFontSize: 18px;
+$btnDefaultColor: #fff;
+$btnDefaultBg: $darkGrey;
+$btnDefaultBgHover: $grey;
+$btnActionBg: $orange;
+$btnActionBgHover: $orangeLight;
+$btnDisableBg: $lightGrey;
+$btnDisableBgHover: $lightGrey;
+
+//table component
+$tableFontSize: 13px;
+$tableTrHover:#f1f3f3;
+
+//color tab
+
+$colorTabFontSize: 16px;
+$colorTabTextColor: #a6a6a6;
+$tabBgHoverActive: #f3f3f1;
+
+//inputs
+
+$inputColor: #a6a6a6;
+$inputColorHover: #333;
+$inputBorderDefault: #e3e3e3;
+$inputBorderHover: #b1b1b1;
+$textareaFont: 12px;
+
+//notification
+
+$notificationLineHeight: 42px;
+$positiveNotificationBg: #96cc9b;
+$positiveNotificationBgHover: #74b67a;
+$negativeNotificationBg: #ec7171;
+$negativeNotificationBgHover: #de5252;
+ 
+//aside component
+
+$asideBg: #191919;
+$asideWidth: 188px;
+$asideWidthMini: 160px;
+
+//sidebar
+
+$sidebarMobileWidth: 60px;
+
+//default border
+
+$defaultBorder: 1px solid $lightGrey;
+
+//media
+
+$mobBrP-size: 1280px;
+$lg-size: 1199px;
+$md-size: 991px;
+$sm-size: 767px;
+$xs-size: 599px;
+$mini-size: 479px;
+
 
 ```
-**Все таски gulp file**
 
+**Стандартные классы**
+
+```css
+
+//text-classes
+.text-bold{
+    font-weight: $fontBold;
+}
+.text-center{
+  text-align: center;
+}
+.text-left{
+    text-align: left;
+}
+.red-text{
+    color: $red;
+}
+//class position fixed
+.fixed-to-top{
+    position: fixed;
+    z-index: 99;
+    top:0;
+}
+
+//class flexbox
+
+.flex-container{
+    display: flex;
+}
+.align-items-center{
+    align-items: center;
+}
+.justify-content-sb{
+    justify-content: space-between;
+}
+.flex-wrap{
+    flex-wrap: wrap;
+}
+// columns
+
+.third-width-col{
+    width: 33.3333%;
+}
+.half-width-col{
+    width: 50%;
+}
+.full-width{
+    width: 100%;
+}
+
+// Content wrapper
+
+.content-wrapper{
+    padding: $defaultIndent;
+    height: calc(100vh - 60px);
+}
+
+.scroll-x-wrap{
+    overflow-x: scroll;
+}
+
+```
+
+**Плагины**
+
+```js
+;(function(){
+  // sidebar mobile
+  var menuBtn = $('.menu-btn');
+  var body = $('body');
+  var mobileSidebarClass = '_mobileSidebar';
+  var mobileBreakPoint = 1280;
+  var openInMobileClass = '_openInmobile';
+
+  menuBtn.on('click', function(e){
+    
+    var width = $(window).width();
+    body.toggleClass(mobileSidebarClass);
+    if(width < mobileBreakPoint){
+      body.toggleClass(openInMobileClass);
+    }
+
+  });
+
+  $(window).on('resize load', function(e){
+    var width = $(this).width();
+    
+    if(width < mobileBreakPoint && !body.hasClass(openInMobileClass)){
+      body.addClass(mobileSidebarClass);
+    } else if(width > mobileBreakPoint){
+      body.removeClass(mobileSidebarClass);
+      body.removeClass(openInMobileClass);
+    }
+
+  });
+
+  // loader hide
+  var loader = $('#loading');
+
+  $(window).on('load', function(e){
+    loader.addClass('hide');
+  });
+
+
+  // dropdown menu
+  var dropdownWrap = $('.dropdown-wrap');
+
+  dropdownWrap.on('click', function(e){
+    e.preventDefault();
+    var dropdown = $(this).find('.dropdown-menu');
+    dropdown.slideToggle();
+  });
+
+})();
+
+```
 
 ```js
 
-gulp.task('css', function(){ // Создаем таск Sass
-    return gulp.src('src/css/**/*.css') // Берем источник
-        .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true })) // Создаем префиксы
-        .pipe(gulp.dest('app/css')) // Выгружаем результата в папку app/css
-        .pipe(browserSync.reload({stream: true})) // Обновляем CSS на странице при изменении
-});
+$( function() {
 
-gulp.task('sass', function () {
-    gulp.src('src/scss/**/*.scss')
-        .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-        .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
-        .pipe(gulp.dest('app/css'))
-}) ;
+    // dateoicker init
+    var dateFormat = "mm/dd/yy",
+        from = $("#from")
+            .datepicker({
+                defaultDate: "+1w",
+                changeMonth: true,
+                numberOfMonths: 1
+            })
+            .on("change", function () {
+                to.datepicker("option", "minDate", getDate(this));
+            }),
+        to = $("#to").datepicker({
+            defaultDate: "+1w",
+            changeMonth: true,
+            numberOfMonths: 1
+        })
+            .on("change", function () {
+                from.datepicker("option", "maxDate", getDate(this));
+            });
 
-gulp.task('browser-sync', function() { // Создаем таск browser-sync
-    browserSync({ // Выполняем browserSync
-        server: { // Определяем параметры сервера
-            baseDir: 'app' // Директория для сервера - app
-        },
-        notify: false // Отключаем уведомления
+    function getDate(element) {
+        var date;
+        try {
+            date = $.datepicker.parseDate(dateFormat, element.value);
+        } catch (error) {
+            date = null;
+        }
+
+        return date;
+    }
+
+
+    // chart init
+    var ctx = document.getElementById("myChart");
+    if (ctx) {
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ["01", "02", "04", "05", "06", "07", "08", "09", "10"],
+                datasets: [{
+                    label: 'Signups',
+                    data: [100, 175, 135, 190, 100, 150, 175, 143, 110],
+                    backgroundColor: [
+                        'rgba(128, 191, 202, 1)',
+                        'rgba(128, 191, 202, 1)',
+                        'rgba(128, 191, 202, 1)',
+                        'rgba(128, 191, 202, 1)',
+                        'rgba(128, 191, 202, 1)',
+                        'rgba(128, 191, 202, 1)',
+                        'rgba(128, 191, 202, 1)',
+                        'rgba(128, 191, 202, 1)',
+                        'rgba(128, 191, 202, 1)',
+                    ],
+
+                },
+                    {
+                        label: 'FTD',
+                        data: [190, 120, 200, 210, 150, 175, 143, 110, 130],
+                        backgroundColor: [
+                            'rgba(255, 154, 56, 1)',
+                            'rgba(255, 154, 56, 1)',
+                            'rgba(255, 154, 56, 1)',
+                            'rgba(255, 154, 56, 1)',
+
+                            'rgba(255, 154, 56, 1)',
+                            'rgba(255, 154, 56, 1)',
+                            'rgba(255, 154, 56, 1)',
+                            'rgba(255, 154, 56, 1)',
+                            'rgba(255, 154, 56, 1)',
+                        ],
+
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+    }
+
+
+    // modal init
+    var modalBtns = $('[data-modal]');
+
+    modalBtns.on('click', function (event) {
+        event.preventDefault();
+
+        var target = $(this).attr('data-modal');
+
+        $(target).bPopup({
+            closeClass:'close'
+        });
     });
-});
 
-gulp.task('sprite', function () { // Создаем таск sprite
-    var spriteData = gulp.src('src/sprite/*.png').pipe(spritesmith({ // Настройка спрайта
-        imgName: 'sprite.png',
-        cssName: 'sprite.css'
-    }));
-    // return spriteData.pipe(gulp.dest('app/img/')); // выгружаем спрайты в папку img
-    var imgStream = spriteData.img
-        .pipe(gulp.dest('app/img/'));
-
-    var cssStream = spriteData.css
-        .pipe(gulp.dest('src/css/'));
-
-    return merge(imgStream, cssStream);
-});
+    // scrollbar init
+    $('.scrollbar-inner').scrollbar();
 
 
-gulp.task('scripts', function() {
-    return gulp.src('src/js/**/*.js')
-        .pipe(concat('plugins.min.js')) // Собираем их в кучу в новом файле plugins.min.js
-        .pipe(uglify()) // Сжимаем JS файл
-        .pipe(gulp.dest('app/js')); // Выгружаем в папку app/js
-});
+    // range slider init
+    var handle = $( "#custom-handle" );
+    var range = $( "#slider" );
+    range.slider({
+        value: 60,
+        orientation: "horizontal",
+        range: "min",
+        animate: true,
+        max: 200,
 
-gulp.task('css-libs', ['css'], function() {
-    return gulp.src('app/css/style.css') // Выбираем файл для минификации
-        .pipe(cssnano()) // Сжимаем
-        .pipe(rename({suffix: '.min'})) // Добавляем суффикс .min
-        .pipe(gulp.dest('app/css')); // Выгружаем в папку app/css
-});
+        create: function(event, ui) {
+            handle.append('<span class="value">'+$( this ).slider( "value" )+'hours</span>');
+            var value = handle.find('.value');
+            range.slider('option', 'valueSpan', value);
+        },
+        slide: function( event, ui ) {
+            range.slider( "option" ,"valueSpan").text(ui.value + 'hours');
+        }
+    });
 
-gulp.task('watch', ['browser-sync', 'css', 'scripts', 'sprite', 'sass'], function() {
-    // gulp.watch('src/css/**/*.css', ['css']); // Наблюдение за css файлами в папке css
-    gulp.watch('src/scss/**/*.scss', ['sass']);
-    gulp.watch('src/sprite/*.png', ['sprite']); // Наблюдение за папкой с картинками для спрайтов  папке sprite
-    gulp.watch('app/*.html', browserSync.reload); // Наблюдение за HTML файлами в корне проекта
-    gulp.watch('app/js/**/*.js', browserSync.reload);   // Наблюдение за JS файлами в папке js
-    gulp.watch('app/js/**/*.js', ['scripts']);   // Наблюдение за JS файлами в папке js
-});
+    // formstyler
 
-gulp.task('img', function() {
-    return gulp.src('src/img/**/*') // Берем все изображения из app
-        .pipe(cache(imagemin({  // Сжимаем их с наилучшими настройками с учетом кеширования
-            interlaced: true,
-            progressive: true,
-            svgoPlugins: [{removeViewBox: false}],
-            use: [pngquant()]
-        })))
-        .pipe(gulp.dest('app/img')); // Выгружаем на продакшен
-});
+    $('select').styler();
 
-
-gulp.task('clear', function () {
-    return cache.clearAll();
-});
-
-gulp.task('default', ['watch']);
+} );
 
 ```
