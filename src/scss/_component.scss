@@ -294,6 +294,9 @@
 .datepicker-form{
   .btn{
     vertical-align: middle;
+    @media (max-width: $xs-size){
+      width: 100%;
+    }
   }
 }
 .date-input-wrap{
@@ -303,16 +306,17 @@
   display: inline-block;
   vertical-align: middle;
   @media (max-width: $xs-size){
-    margin-right: $defaultIndent;
-  }
-  @media(max-width: $mini-size){
-    margin-bottom: 10px;
+    margin-bottom: $defaultIndent;
+    width: 100%;
   }
   .date-control{
     padding: 11px 16px;
     font-family: $fontFamily;
     font-weight: $fontLight;
     font-size: calc($textareaFont + 2px);
+    @media (max-width: $xs-size){
+      width: 100%;
+    }
   }
   #to{
     border-left: $defaultBorder;
@@ -364,31 +368,13 @@
   //header
 
 .header {
-  padding-left: 800px;
   background-color: #fff;
   border-bottom: $defaultBorder;
   right: 0;
   left: 0;
-  @media(max-width: $mobBrP-size){
-    padding-left: 650px;
-  }
-  @media(max-width: $lg-size){
-    padding-left: 450px;
-  }
-  @media(max-width: $md-size){
-    padding-left: 270px;
-  }
-  @media (max-width: $sm-size) {
-    padding-left: 125px;
-  }
-  @media (max-width: $xs-size) {
-    padding-left: 65px;
-  }
-  @media(max-width: $mini-size){
-    padding-left: 60px;
-  }
   .container-fluid {
     padding: 0;
+    justify-content: flex-end;
   }
   .user-info {
     padding: $defaultIndent;
@@ -496,9 +482,6 @@
   left: 0;
   z-index: 100;
   overflow-y: auto;
-  @media(max-width: $lg-size){
-    width: $asideWidthMini;
-  }
   .menu-control {
     padding: $defaultIndent;
     .menu-btn {
@@ -519,6 +502,7 @@
       padding-bottom: 27px;
       li {
         color: $darkGrey;
+        border-left: 4px solid transparent;
         &.active, &:hover{
           background-color: #282828;
           color: $white;
@@ -528,7 +512,6 @@
           display: block;
           padding: 14px;
           font-size: 14px;
-          border-left: 4px solid transparent;
           .icon{
             font-size: 17px;
             margin-right: 15px;
@@ -610,7 +593,7 @@
     form{
       width: 455px;
       display: inline-block;
-      @media (max-width: $md-size){
+      @media (max-width: $xs-size){
         width: 320px;
       }
       @media(max-width: $mini-size){
@@ -644,6 +627,9 @@
 .panel-date{
   padding: 30px 0;
   border-bottom: $defaultBorder;
+  form{
+    padding: 0 $defaultIndent;
+  }
 }
 
 // label group

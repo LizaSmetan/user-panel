@@ -1727,6 +1727,9 @@ input[type='submit'].styler[disabled] {
 
 .datepicker-form .btn {
   vertical-align: middle; }
+  @media (max-width: 599px) {
+    .datepicker-form .btn {
+      width: 100%; } }
 
 .date-input-wrap {
   padding: 4px 0;
@@ -1737,16 +1740,17 @@ input[type='submit'].styler[disabled] {
   vertical-align: middle; }
   @media (max-width: 599px) {
     .date-input-wrap {
-      margin-right: 18px; } }
-  @media (max-width: 479px) {
-    .date-input-wrap {
-      margin-bottom: 10px; } }
+      margin-bottom: 18px;
+      width: 100%; } }
   .date-input-wrap .date-control {
     padding: 11px 16px;
     font-family: "Roboto", sans-serif;
     font-weight: 300;
     font-size: -webkit-calc($textareaFont + 2px);
     font-size: calc($textareaFont + 2px); }
+    @media (max-width: 599px) {
+      .date-input-wrap .date-control {
+        width: 100%; } }
   .date-input-wrap #to {
     border-left: 1px solid #e3e3e3;
     background: url("../img/calendar.svg") no-repeat 90%;
@@ -1786,31 +1790,16 @@ input[type='submit'].styler[disabled] {
   margin-right: -18px; }
 
 .header {
-  padding-left: 800px;
   background-color: #fff;
   border-bottom: 1px solid #e3e3e3;
   right: 0;
   left: 0; }
-  @media (max-width: 1280px) {
-    .header {
-      padding-left: 650px; } }
-  @media (max-width: 1199px) {
-    .header {
-      padding-left: 450px; } }
-  @media (max-width: 991px) {
-    .header {
-      padding-left: 270px; } }
-  @media (max-width: 767px) {
-    .header {
-      padding-left: 125px; } }
-  @media (max-width: 599px) {
-    .header {
-      padding-left: 65px; } }
-  @media (max-width: 479px) {
-    .header {
-      padding-left: 60px; } }
   .header .container-fluid {
-    padding: 0; }
+    padding: 0;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+            justify-content: flex-end; }
   .header .user-info {
     padding: 18px;
     border-left: 1px solid #e3e3e3; }
@@ -1894,9 +1883,6 @@ input[type='submit'].styler[disabled] {
   left: 0;
   z-index: 100;
   overflow-y: auto; }
-  @media (max-width: 1199px) {
-    .aside {
-      width: 160px; } }
   .aside .menu-control {
     padding: 18px; }
     .aside .menu-control .menu-btn {
@@ -1911,7 +1897,8 @@ input[type='submit'].styler[disabled] {
   .aside .aside-menu ul {
     padding-bottom: 27px; }
     .aside .aside-menu ul li {
-      color: #979797; }
+      color: #979797;
+      border-left: 4px solid transparent; }
       .aside .aside-menu ul li.active, .aside .aside-menu ul li:hover {
         background-color: #282828;
         color: #fff;
@@ -1919,8 +1906,7 @@ input[type='submit'].styler[disabled] {
       .aside .aside-menu ul li a {
         display: block;
         padding: 14px;
-        font-size: 14px;
-        border-left: 4px solid transparent; }
+        font-size: 14px; }
         .aside .aside-menu ul li a .icon {
           font-size: 17px;
           margin-right: 15px; }
@@ -1976,7 +1962,7 @@ input[type='submit'].styler[disabled] {
     .panel .panel-form form {
       width: 455px;
       display: inline-block; }
-      @media (max-width: 991px) {
+      @media (max-width: 599px) {
         .panel .panel-form form {
           width: 320px; } }
       @media (max-width: 479px) {
@@ -2001,6 +1987,8 @@ input[type='submit'].styler[disabled] {
 .panel-date {
   padding: 30px 0;
   border-bottom: 1px solid #e3e3e3; }
+  .panel-date form {
+    padding: 0 18px; }
 
 .label-group {
   display: -webkit-box;
@@ -2300,10 +2288,7 @@ input[type="radio"] {
 main {
   padding-left: 188px;
   padding-top: 60px; }
-  @media (max-width: 1199px) {
-    main {
-      padding-left: 160px; } }
-  @media (max-width: 599px) {
+  @media (max-width: 767px) {
     main {
       padding-left: 60px; } }
 
@@ -2322,6 +2307,11 @@ main {
 ._mobileSidebar .aside {
   width: 60px;
   overflow-y: visible; }
+  ._mobileSidebar .aside .menu-control {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
   ._mobileSidebar .aside .logo {
     display: none; }
   ._mobileSidebar .aside .aside-menu {

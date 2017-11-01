@@ -13,10 +13,7 @@
 main{
   padding-left: $asideWidth;
   padding-top: 60px;
-  @media(max-width: $lg-size){
-    padding-left: $asideWidthMini;
-  }
-  @media(max-width: $xs-size){
+  @media (max-width: $sm-size) {
     padding-left: $sidebarMobileWidth;
   }
 }
@@ -35,6 +32,9 @@ main{
   .aside{
     width: $sidebarMobileWidth;
     overflow-y: visible;
+    .menu-control{
+      justify-content: center;
+    }
     .logo{
       display: none;
     }
